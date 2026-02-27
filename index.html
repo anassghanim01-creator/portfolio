@@ -234,6 +234,8 @@
   margin-bottom: 8px;
   line-height: 1.7;
 }
+    /* Softer emphasis inside chips */
+.chips strong { color: var(--text); font-weight: 700; }
   </style>
 </head>
 
@@ -535,41 +537,62 @@
 </section>
   <!-- SKILLS -->
   <section class="sec" id="skills">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Skills</p>
-        <h2>Tools, methods, programming</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="card pad">
-          <h3>Simulation</h3>
-          <p class="sub">FEM 2D/3D, non-linear contact, fatigue, thermal, CFD.</p>
-          <div class="chips">
-            <span>FEM</span><span>Non-linear</span><span>Contact</span><span>Fatigue</span><span>CFD</span>
-          </div>
-        </div>
-
-        <div class="card pad">
-          <h3>Software</h3>
-          <p class="sub">Industrial simulation + CAD toolchain.</p>
-          <div class="chips">
-            <span>ANSYS Workbench</span><span>APDL</span><span>Fluent</span><span>COMSOL</span>
-            <span>CATIA V5</span><span>SolidWorks</span>
-          </div>
-        </div>
-
-        <div class="card pad">
-          <h3>Programming & data</h3>
-          <p class="sub">Scientific development & post-processing.</p>
-          <div class="chips">
-            <span>Python</span><span>MATLAB</span><span>Fortran</span><span>DAQ</span>
-          </div>
-        </div>
-      </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Skills & Approach</p>
+      <h2>How I work + what I can deliver</h2>
+      <p class="sub">
+        A compact view of my engineering workflow and technical competencies across solid mechanics, fluids and experiments.
+      </p>
     </div>
-  </section>
 
+    <div class="grid-2">
+
+      <!-- Approach -->
+      <div class="card pad">
+        <h3>Engineering approach</h3>
+        <ul class="list">
+          <li>Physics first: define assumptions, boundary conditions and validation targets</li>
+          <li><strong>FEM / CFD</strong> modeling with convergence control and mesh strategy</li>
+          <li>Non-linear problems: <strong>contact</strong>, large deformation, stability</li>
+          <li>Durability: stress analysis and <strong>fatigue</strong> reasoning (Goodman / Miner)</li>
+          <li>Experimental validation: <strong>PIV</strong>, vibrations, signal processing in <strong>Python</strong></li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="card pad">
+        <h3>Core competencies</h3>
+        <div class="chips">
+          <span><strong>FEM</strong> (2D/3D)</span>
+          <span><strong>CFD</strong> (convection, transport)</span>
+          <span><strong>Non-linear contact</strong></span>
+          <span><strong>Thermal simulation</strong></span>
+          <span><strong>Fatigue</strong> (Goodman, Miner)</span>
+          <span><strong>PIV</strong> / turbulence diagnostics</span>
+          <span><strong>Scientific computing</strong></span>
+        </div>
+
+        <div class="mt">
+          <h3 style="margin-top:0;">Tools</h3>
+          <div class="chips">
+            <span>ANSYS Workbench</span>
+            <span>ANSYS APDL</span>
+            <span>ANSYS Fluent</span>
+            <span>COMSOL</span>
+            <span>CATIA V5</span>
+            <span>SolidWorks</span>
+            <span>Python</span>
+            <span>MATLAB</span>
+            <span>Fortran</span>
+            <span>Linux</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- CONTACT -->
   <footer class="foot" id="contact">
     <div class="wrap foot-grid">
