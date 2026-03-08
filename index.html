@@ -373,17 +373,30 @@
 
     /* Responsive adjustments */
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-grid .badge, .hero-grid .cta, .hero-grid .chips { justify-content: center; }
       .hero-grid .lead { margin-left: auto; margin-right: auto; }
-      .hero-visual { display: none; /* Hide visual on small screens for cleaner text focus */ }
+      .hero-visual { margin: 30px auto 0; max-width: 250px; } /* Resize instead of hiding */
       .foot-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .sec { padding: 60px 0; }
-      .topnav .wrap { flex-direction: column; gap: 16px; }
-      .navlinks { width: 100%; justify-content: center; }
-      .media img, .wide-media img, .mini-media img { padding: 10px; }
+      .hero { padding: 90px 0 40px; }
+      .sec { padding: 50px 0; }
+      .topnav .wrap { flex-direction: column; gap: 12px; padding: 12px; }
+      .navlinks { width: 100%; justify-content: center; flex-wrap: wrap; gap: 6px; }
+      .navlinks a { padding: 6px 12px; font-size: 13px; }
+      
+      .grid-2, .grid-3 { grid-template-columns: 1fr; } /* Force single column to prevent overflow */
+      .clip-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack mini images */
+      
+      .media img, .wide-media img, .mini-media img { padding: 10px; height: auto; max-height: 240px; }
+      
+      h1 { font-size: clamp(32px, 8vw, 40px); }
+      h2 { font-size: clamp(24px, 6vw, 32px); }
+      
+      .cta { flex-direction: column; align-items: stretch; gap: 12px; }
+      .cta a.btn { width: 100%; justify-content: center; }
+      .pad { padding: 20px; }
     }
 
     /* R&D mindset refinement */
