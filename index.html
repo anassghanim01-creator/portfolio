@@ -380,19 +380,30 @@
       .foot-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .hero { padding: 90px 0 40px; }
+      .hero { padding: 140px 0 40px; } /* Push content down to avoid overlapping the navbar */
       .sec { padding: 50px 0; }
-      .topnav .wrap { flex-direction: column; gap: 12px; padding: 12px; }
-      .navlinks { width: 100%; justify-content: center; flex-wrap: wrap; gap: 6px; }
-      .navlinks a { padding: 6px 12px; font-size: 13px; }
+      .topnav .wrap { flex-direction: column; gap: 10px; padding: 10px 0; }
+      
+      /* Make nav menu a single scrollable row on mobile so it doesn't take up the whole screen */
+      .navlinks { 
+        width: 100%; 
+        justify-content: flex-start; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      }
+      .navlinks::-webkit-scrollbar { display: none; } /* Hide scrollbar */
+      .navlinks a { padding: 6px 14px; font-size: 13px; white-space: nowrap; }
       
       .grid-2, .grid-3 { grid-template-columns: 1fr; } /* Force single column to prevent overflow */
       .clip-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack mini images */
       
       .media img, .wide-media img, .mini-media img { padding: 10px; height: auto; max-height: 240px; }
       
-      h1 { font-size: clamp(32px, 8vw, 40px); }
+      h1 { font-size: clamp(32px, 8vw, 40px); margin-top: 0; }
       h2 { font-size: clamp(24px, 6vw, 32px); }
+      .lead { font-size: 1rem; line-height: 1.6; } /* Slightly smaller description text */
       
       .cta { flex-direction: column; align-items: stretch; gap: 12px; }
       .cta a.btn { width: 100%; justify-content: center; }
