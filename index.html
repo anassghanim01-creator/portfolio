@@ -106,6 +106,8 @@
     .mt-sm { margin-top: 16px; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .experience-visuals { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; }
+    .experience-figure img { height: 360px; object-fit: contain; }
     .stack { display: grid; gap: 24px; }
 
     /* Hero */
@@ -401,7 +403,7 @@
       .navlinks::-webkit-scrollbar { display: none; } /* Hide scrollbar */
       .navlinks a { padding: 6px 14px; font-size: 13px; white-space: nowrap; }
       
-      .grid-2, .grid-3 { grid-template-columns: 1fr; } /* Force single column to prevent overflow */
+      .grid-2, .grid-3, .experience-visuals { grid-template-columns: 1fr; } /* Force single column to prevent overflow */
       .clip-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack mini images */
       
       .media img, .wide-media img, .mini-media img { padding: 10px; height: auto; max-height: 240px; }
@@ -491,32 +493,23 @@ I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</stron
         </p>
       </div>
 
-      <div class="grid-3">
-        <figure class="card media">
-          <img
-            src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/kKelHy5b3g8IsmfzPB73A0QJEU1umnGqehnOxKsz.png"
-            alt="Exploded view of internal clutch — context"
-            loading="lazy"
-          />
-          <figcaption>System context — internal clutch exploded view.</figcaption>
-        </figure>
-
-        <figure class="card media">
+      <div class="experience-visuals">
+        <figure class="card media experience-figure">
           <img
             src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png"
-            alt="AT6 Automatic Transmission (Stellantis)"
+            alt="AT6 automatic transmission context"
             loading="lazy"
           />
-          <figcaption>Context: AT6 automatic transmission used in various Stellantis vehicles.</figcaption>
+          <figcaption><strong>Capgemini Engineering:</strong> automatic transmission context for internal clutch optimization work.</figcaption>
         </figure>
 
-        <figure class="card media">
+        <figure class="card media experience-figure">
           <img
-            src="assets/new_assembly.png"
-            alt="Upgraded Assembly Design"
+            src="assets/renault-crash-context.svg"
+            alt="Blurred full-vehicle crash simulation model"
             loading="lazy"
           />
-          <figcaption>Upgraded Design: Optimized spring washer assembly.</figcaption>
+          <figcaption><strong>Renault Group Engineering:</strong> blurred, confidentiality-safe crash simulation model context.</figcaption>
         </figure>
       </div>
 
