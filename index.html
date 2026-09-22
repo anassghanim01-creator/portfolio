@@ -244,6 +244,11 @@
     .sec-head { margin-bottom: 40px; text-align: center; }
     .sec-head h2 { display: inline-block; }
     .sec-head .sub { margin: 0 auto; }
+    .sec-head .kicker {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 12px;
+    }
 
     /* Media Styling */
     figure { margin: 0; }
@@ -441,28 +446,22 @@
       <h1>Anas Ghanim</h1>
 
       <p class="lead">
-Hi, I’m Anas — a mechanical simulation and validation engineer with a 
-<strong>Master in Simulation & Instrumentation in Mechanics</strong> from 
-<strong>Université Grenoble Alpes (UGA)</strong>.
-
-My work connects finite element modeling, structural analysis, vibration analysis,
-crash simulation workflows and engineering interpretation for design decisions.
+Hi, I’m Anas — a mechanical simulation and validation engineer focused on
+automotive CAE, finite element modeling, structural analysis, vibration analysis
+and crash simulation workflows.
 </p>
 
 <p class="lead">
-My background combines automotive CAE experience, solid and fluid mechanics,
-FEM/CFD simulation, and experimental validation through instrumentation and physical testing.
+My professional experience connects simulation preparation, solver execution,
+post-processing and engineering interpretation to support concrete design decisions.
+I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from
+<strong>Université Grenoble Alpes (UGA)</strong>.
 </p>
 
       <div class="cta">
         <a class="btn btn-link" target="_blank" rel="noopener"
            href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html">
           Master SIM — UGA
-        </a>
-
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/licence-XA/licence-mecanique-IAI546M7/parcours-mecanique-3e-annee-IAI563XE.html">
-          Licence — UGA
         </a>
 
         <a class="btn btn-ghost" target="_blank" rel="noopener"
@@ -486,10 +485,9 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Experience</p>
-        <h2>Mechanical Design & CAE Experience — Capgemini Engineering</h2>
+        <h2>Professional CAE Experience</h2>
         <p class="sub">
-          Project: optimization of internal clutch components for an automatic gearbox transmission (AT6).
-          Objective: support geometry and material updates through finite element simulation while maintaining the required stiffness, deflection and mechanical reliability targets.
+          Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.
         </p>
       </div>
 
@@ -524,21 +522,22 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
 
       <div class="grid-2 mt">
         <div class="card pad">
-          <h3>Objectives & Constraints</h3>
+          <h3>Capgemini Engineering — transmission CAE</h3>
           <ul class="list">
-            <li>Goal: Replace the spring ring with a lower-cost part delivering equal or superior performance</li>
-            <li>Targets: Maintain the exact same <strong>stiffness</strong> and <strong>deflection</strong></li>
-            <li>Constraints: Respect the surrounding component environment and ensure long-term <strong>durability</strong></li>
+            <li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li>
+            <li>Supported the design team with geometry and material update recommendations based on simulation results</li>
+            <li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li>
+            <li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li>
           </ul>
         </div>
 
         <div class="card pad">
-          <h3>My contributions</h3>
+          <h3>Renault Group Engineering — crash simulation workflow</h3>
           <ul class="list">
-            <li>Contributed to the design and development of internal clutch optimization concepts</li>
-            <li>Prepared finite element simulation models, including geometry updates and targeted mesh refinement</li>
-            <li>Performed static structural and vibration analysis using Abaqus</li>
-            <li>Post-processed deformation and energy results to support engineering design reviews</li>
+            <li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li>
+            <li>Applied boundary conditions and configured output requests for post-processing extraction</li>
+            <li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li>
+            <li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li>
           </ul>
         </div>
       </div>
@@ -548,7 +547,7 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker">Engineering Approach</p>
-      <h2>How I Work</h2>
+      <h2>Simulation workflow</h2>
     </div>
 
     <div class="card pad">
@@ -565,10 +564,10 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
   <section class="sec" id="projects">
     <div class="wrap">
       <div class="sec-head">
-        <p class="kicker">Academic projects — UGA</p>
-        <h2>Non-linear FEM, fatigue, and experimental PIV</h2>
+        <p class="kicker">Selected Projects</p>
+        <h2>Applied mechanics and validation projects</h2>
         <p class="sub">
-          Selected projects representative of my technical profile: contact non-linearity, durability, and experimental flow diagnostics.
+          Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.
         </p>
       </div>
 
@@ -660,8 +659,8 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
 <section class="sec" id="academic-portfolio">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker">Complete Academic Portfolio</p>
-      <h2>Master Simulation & Instrumentation in Mechanics — UGA</h2>
+      <p class="kicker">Academic Foundation</p>
+      <h2>Simulation & Instrumentation in Mechanics — UGA</h2>
       <p class="sub">
         Full overview of academic projects covering numerical simulation, experimental mechanics,
         scientific computing and multiphysics.
@@ -735,10 +734,10 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
   <section class="sec" id="skills">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker">Skills & Approach</p>
-      <h2>How I work + what I can deliver</h2>
+      <p class="kicker">CAE Skillset</p>
+      <h2>Tools and technical strengths</h2>
       <p class="sub">
-        A compact view of my engineering workflow and technical competencies across structural simulation, crash workflows, fluids and experiments.
+        A compact view of the technical capabilities I use in professional simulation work.
       </p>
     </div>
 
@@ -746,7 +745,7 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
 
       <!-- Approach -->
       <div class="card pad">
-  <h3>R&D mindset</h3>
+  <h3>Engineering workflow</h3>
   <ul class="list">
     <li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li>
     <li>Strong foundation in <strong>solid and fluid mechanics</strong></li>
@@ -785,8 +784,6 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
             <span>Python</span>
             <span>MATLAB</span>
             <span>Fortran</span>
-            <span>Linux</span>
-            <span>Web Dev (HTML/CSS)</span>
           </div>
         </div>
       </div>
@@ -802,7 +799,7 @@ FEM/CFD simulation, and experimental validation through instrumentation and phys
         <p class="kicker">Testimonials</p>
         <h2>Recommendation Letters</h2>
         <p class="sub">
-          Professional and academic endorsements highlighting my technical skills and language proficiency.
+          Endorsements supporting my professional experience, technical communication and language proficiency.
         </p>
       </div>
 
