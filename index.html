@@ -108,6 +108,7 @@
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .experience-visuals { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; }
     .experience-figure img { height: 360px; object-fit: contain; }
+    #experience .reveal { opacity: 1 !important; transform: none !important; }
     .stack { display: grid; gap: 24px; }
 
     /* Hero */
@@ -117,7 +118,6 @@
       overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
-    /* Dynamic Background Glows */
     .hero::before, .hero::after {
       content: '';
       position: absolute;
@@ -135,10 +135,7 @@
     }
     .hero::before { background: var(--accent); top: -200px; left: -100px; }
     .hero::after { background: var(--accent2); bottom: -200px; right: 20%; animation-delay: -4s; }
-    
     .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-    
-    /* Modern Avatar Placeholder/Visual */
     .hero-visual {
       position: relative;
       width: 100%;
@@ -163,9 +160,7 @@
       animation: spin 30s linear infinite;
     }
     @keyframes spin { 100% { transform: rotate(360deg); } }
-    
     .hero-visual svg { width: 60%; height: 60%; color: var(--muted); opacity: 0.5; }
-
     .badge {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 8px 16px;
@@ -185,8 +180,6 @@
       animation: blink 2s infinite;
     }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
-    /* Buttons */
     .cta { display: flex; gap: 16px; flex-wrap: wrap; margin: 32px 0 24px; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -221,8 +214,6 @@
       background: rgba(255,255,255,0.08);
       color: #fff;
     }
-
-    /* Chips */
     .chips { display: flex; gap: 10px; flex-wrap: wrap; }
     .chips span {
       font-size: 13px;
@@ -240,19 +231,11 @@
       color: #fff;
       transform: translateY(-2px);
     }
-
-    /* Sections */
     .sec { padding: 80px 0; position: relative; }
     .sec-head { margin-bottom: 40px; text-align: center; }
     .sec-head h2 { display: inline-block; }
     .sec-head .sub { margin: 0 auto; }
-    .sec-head .kicker {
-      display: block;
-      width: fit-content;
-      margin: 0 auto 12px;
-    }
-
-    /* Media Styling */
+    .sec-head .kicker { display: block; width: fit-content; margin: 0 auto 12px; }
     figure { margin: 0; }
     .media, .wide-media, .mini-media {
       overflow: hidden;
@@ -261,7 +244,6 @@
       background: var(--bg2);
       position: relative;
     }
-    /* Inner shadow for depth */
     .media::after, .wide-media::after, .mini-media::after {
       content: '';
       position: absolute;
@@ -276,14 +258,11 @@
       object-fit: contain;
       display: block;
       transition: transform 0.6s ease;
-      padding: 20px; /* Padding inside the box so image isn't flush */
+      padding: 20px;
     }
-    .card:hover .media img, .card:hover .wide-media img, .card:hover .mini-media img {
-      transform: scale(1.05); /* Subtle zoom on card hover */
-    }
+    .card:hover .media img, .card:hover .wide-media img, .card:hover .mini-media img { transform: scale(1.05); }
     .wide-media img { height: 400px; padding: 30px; }
     .mini-media img { height: 260px; padding: 15px; }
-    
     figcaption {
       padding: 14px 20px;
       color: var(--text);
@@ -294,17 +273,11 @@
       position: relative;
       z-index: 2;
     }
-
     .clip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-
-    /* Lists */
     .list { margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.8; }
     .list li { margin-bottom: 12px; position: relative; }
     .list li::marker { color: var(--accent); font-size: 1.2em; }
-    
     .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-
-    /* Top Nav */
     .topnav {
       position: fixed;
       top: 0; left: 0; width: 100%;
@@ -315,13 +288,9 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
       transition: all 0.3s ease;
     }
-    .topnav.scrolled {
-      padding: 5px 0;
-      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-    }
+    .topnav.scrolled { padding: 5px 0; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
     .topnav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; transition: padding 0.3s ease; }
     .topnav.scrolled .wrap { padding: 10px 0; }
-    
     .navlinks { display: flex; gap: 8px; flex-wrap: wrap; background: rgba(255,255,255,0.03); padding: 4px; border-radius: 999px; border: 1px solid var(--border); }
     .navlinks a {
       color: var(--muted);
@@ -331,18 +300,8 @@
       border-radius: 999px;
       transition: all 0.2s ease;
     }
-    .navlinks a:hover, .navlinks a.active {
-      color: var(--bg);
-      background: #fff;
-    }
-
-    /* Footer */
-    .foot {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
+    .navlinks a:hover, .navlinks a.active { color: var(--bg); background: #fff; }
+    .foot { padding: 80px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
     .foot::before {
       content: '';
       position: absolute;
@@ -355,77 +314,45 @@
     .foot-card { display: flex; flex-direction: column; justify-content: center; }
     .mono { font-family: 'ui-monospace', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; font-size: 18px; margin: 5px 0 20px; }
     .mono a { color: var(--accent); position: relative; }
-    .mono a::after {
-      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px;
-      background: var(--accent); transition: width 0.3s ease;
-    }
+    .mono a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease; }
     .mono a:hover::after { width: 100%; }
-
-    /* Animations Classes (Triggered by JS) */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Staggered reveals for grids */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
     .grid-2 .reveal:nth-child(2) { transition-delay: 0.1s; }
     .grid-3 .reveal:nth-child(2) { transition-delay: 0.1s; }
     .grid-3 .reveal:nth-child(3) { transition-delay: 0.2s; }
     .grid-3 .reveal:nth-child(4) { transition-delay: 0.3s; }
     .grid-3 .reveal:nth-child(5) { transition-delay: 0.4s; }
-
-    /* Responsive adjustments */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-grid .badge, .hero-grid .cta, .hero-grid .chips { justify-content: center; }
       .hero-grid .lead { margin-left: auto; margin-right: auto; }
-      .hero-visual { margin: 30px auto 0; max-width: 250px; } /* Resize instead of hiding */
+      .hero-visual { margin: 30px auto 0; max-width: 250px; }
       .foot-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .hero { padding: 140px 0 40px; } /* Push content down to avoid overlapping the navbar */
+      .hero { padding: 140px 0 40px; }
       .sec { padding: 50px 0; }
       .topnav .wrap { flex-direction: column; gap: 10px; padding: 10px 0; }
-      
-      /* Make nav menu a single scrollable row on mobile so it doesn't take up the whole screen */
-      .navlinks { 
-        width: 100%; 
-        justify-content: flex-start; 
-        flex-wrap: nowrap; 
-        overflow-x: auto; 
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-      }
-      .navlinks::-webkit-scrollbar { display: none; } /* Hide scrollbar */
+      .navlinks { width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .navlinks::-webkit-scrollbar { display: none; }
       .navlinks a { padding: 6px 14px; font-size: 13px; white-space: nowrap; }
-      
-      .grid-2, .grid-3, .experience-visuals { grid-template-columns: 1fr; } /* Force single column to prevent overflow */
-      .clip-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack mini images */
-      
+      .grid-2, .grid-3, .experience-visuals { grid-template-columns: 1fr; }
+      .clip-grid { grid-template-columns: 1fr; gap: 20px; }
       .media img, .wide-media img, .mini-media img { padding: 10px; height: auto; max-height: 240px; }
-      
       h1 { font-size: clamp(32px, 8vw, 40px); margin-top: 0; }
       h2 { font-size: clamp(24px, 6vw, 32px); }
-      .lead { font-size: 1rem; line-height: 1.6; } /* Slightly smaller description text */
-      
+      .lead { font-size: 1rem; line-height: 1.6; }
       .cta { flex-direction: column; align-items: stretch; gap: 12px; }
       .cta a.btn { width: 100%; justify-content: center; }
       .pad { padding: 20px; }
     }
-
-    /* R&D mindset refinement */
     .card strong { color: #fff; font-weight: 600; }
     .chips strong { color: #fff; }
     .chips span:hover strong { color: #fff; }
   </style>
 </head>
-
 <body>
-  <!-- Sticky mini nav -->
   <div class="topnav">
     <div class="wrap">
       <div class="badge"><span class="dot"></span> Anas Ghanim</div>
@@ -438,468 +365,75 @@
       </nav>
     </div>
   </div>
-
-  <!-- HERO -->
   <header class="hero">
   <div class="wrap hero-grid">
     <div>
       <div class="badge"><span class="dot"></span> Mechanical Simulation & Validation</div>
-
       <h1>Anas Ghanim</h1>
-
-      <p class="lead">
-Hi, I’m Anas — a mechanical simulation and validation engineer focused on
-automotive CAE, finite element modeling, structural analysis, vibration analysis
-and crash simulation workflows.
-</p>
-
-<p class="lead">
-My professional experience connects simulation preparation, solver execution,
-post-processing and engineering interpretation to support concrete design decisions.
-I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from
-<strong>Université Grenoble Alpes (UGA)</strong>.
-</p>
-
+      <p class="lead">Hi, I’m Anas — a mechanical simulation and validation engineer focused on automotive CAE, finite element modeling, structural analysis, vibration analysis and crash simulation workflows.</p>
+      <p class="lead">My professional experience connects simulation preparation, solver execution, post-processing and engineering interpretation to support concrete design decisions. I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from <strong>Université Grenoble Alpes (UGA)</strong>.</p>
       <div class="cta">
-        <a class="btn btn-link" target="_blank" rel="noopener"
-           href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html">
-          Master SIM — UGA
-        </a>
-
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">
-          LinkedIn
-        </a>
+        <a class="btn btn-link" target="_blank" rel="noopener" href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html">Master SIM — UGA</a>
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">LinkedIn</a>
       </div>
-
-      <div class="chips">
-        <span>French — Professional</span>
-        <span>English — Professional</span>
-      </div>
+      <div class="chips"><span>French — Professional</span><span>English — Professional</span></div>
     </div>
-    <div class="hero-visual reveal active">
-      <img src="assets/profile_pic_1.png" alt="Anas Ghanim" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;">
-    </div>
+    <div class="hero-visual reveal active"><img src="assets/profile_pic_1.png" alt="Anas Ghanim" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;"></div>
   </div>
 </header>
-  <!-- EXPERIENCE -->
   <section class="sec" id="experience">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Experience</p>
         <h2>Professional CAE Experience</h2>
-        <p class="sub">
-          Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.
-        </p>
+        <p class="sub">Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.</p>
       </div>
-
       <div class="experience-visuals">
         <figure class="card media experience-figure">
-          <img
-            src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png"
-            alt="AT6 automatic transmission context"
-            loading="lazy"
-          />
+          <img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png" alt="AT6 automatic transmission context" loading="lazy" />
           <figcaption><strong>Capgemini Engineering:</strong> automatic transmission context for internal clutch optimization work.</figcaption>
         </figure>
-
         <figure class="card media experience-figure">
-          <img
-            src="assets/renault-crash-context.svg"
-            alt="Blurred full-vehicle crash simulation model"
-            loading="lazy"
-          />
+          <img src="assets/renault-crash-context.svg?v=873c235" alt="Blurred full-vehicle crash simulation model" loading="lazy" />
           <figcaption><strong>Renault Group Engineering:</strong> blurred, confidentiality-safe crash simulation model context.</figcaption>
         </figure>
       </div>
-
       <div class="grid-2 mt">
         <div class="card pad">
           <h3>Capgemini Engineering — transmission CAE</h3>
-          <ul class="list">
-            <li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li>
-            <li>Supported the design team with geometry and material update recommendations based on simulation results</li>
-            <li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li>
-            <li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li>
-          </ul>
+          <ul class="list"><li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li><li>Supported the design team with geometry and material update recommendations based on simulation results</li><li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li><li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li></ul>
         </div>
-
         <div class="card pad">
           <h3>Renault Group Engineering — crash simulation workflow</h3>
-          <ul class="list">
-            <li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li>
-            <li>Applied boundary conditions and configured output requests for post-processing extraction</li>
-            <li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li>
-            <li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li>
-          </ul>
+          <ul class="list"><li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li><li>Applied boundary conditions and configured output requests for post-processing extraction</li><li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li><li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li></ul>
         </div>
       </div>
     </div>
   </section>
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker">Engineering Approach</p>
-      <h2>Simulation workflow</h2>
-    </div>
-
-    <div class="card pad">
-      <ul class="list">
-        <li>Translate physical behavior into robust finite element models</li>
-        <li>Connect simulation results to geometry, material and design decisions</li>
-        <li>Prepare solver-ready models with controlled mesh, loads, boundary conditions and output requests</li>
-        <li>Post-process deformation, energy and vibration response for technical reviews</li>
-      </ul>
-    </div>
-  </div>
-</section>
-  <!-- PROJECTS -->
-  <section class="sec" id="projects">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Selected Projects</p>
-        <h2>Applied mechanics and validation projects</h2>
-        <p class="sub">
-          Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.
-        </p>
-      </div>
-
-      <div class="stack">
-
-        <!-- Clip: 2 vertical images -->
-        <article class="card pad">
-          <div class="proj-head">
-            <h3 style="font-size: 20px; color: #ffffff;">Polyamide clip — non-linear contact</h3>
-            <p class="meta">ANSYS APDL • large deformation • contact realism</p>
-          </div>
-
-          <div class="clip-grid">
-            <figure class="mini-media">
-              <img
-                src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rsq3aAHqWjr8aC5TgLM9G8RlMie64yP1jSORcQVw.png"
-                alt="Clip full geometry"
-                loading="lazy"
-              />
-              <figcaption>Full geometry</figcaption>
-            </figure>
-
-            <figure class="mini-media">
-              <img
-                src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/01Rqw53Jgonycbr6Jchzc1KH2OcMRBQE59e4NsaQ.png"
-                alt="Meshing & contact with cylinder"
-                loading="lazy"
-              />
-              <figcaption>Mesh & contact with cylinder</figcaption>
-            </figure>
-          </div>
-
-          <p class="lead mt-sm" style="font-size: 15px;">Advanced modeling of a polyamide clip : from <strong>linear elasticity</strong> to realistic <strong>nonlinear contact</strong> simulation.</p>
-        </article>
-
-        <!-- Skateboard fatigue -->
-        <article class="card pad">
-          <div class="proj-head">
-            <h3 style="font-size: 20px; color: #ffffff;">Skateboard axle — stress & fatigue life</h3>
-            <p class="meta">Goodman correction • Miner rule • design under cyclic loads</p>
-          </div>
-
-          <figure class="wide-media">
-            <img
-              src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/xLxhiLfXve1dlYHd4GiCNLY1BEirKIhclE2RlWqT.png"
-              alt="Skateboard axle fatigue"
-              loading="lazy"
-            />
-            <figcaption>Stress field + fatigue life estimation (Goodman / Miner).</figcaption>
-          </figure>
-
-          <p class="lead mt-sm" style="font-size: 15px;">Mechanical and <strong>fatigue assessment</strong> of a skateboard axle : static stress, numerical <strong>fatigue life prediction</strong> using <strong>Goodman correction</strong>, and <strong>Miner’s damage</strong>.</p>
-        </article>
-
-        <!-- PIV -->
-        <article class="card pad">
-          <div class="proj-head">
-            <h3 style="font-size: 20px; color: #ffffff;">PIV — turbulent water jet</h3>
-            <p class="meta">Experimental setup • cross-correlation • Python post-processing</p>
-          </div>
-
-          <div class="clip-grid">
-            <figure class="mini-media">
-              <img
-                src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/KCJyXAnEDHlBXgwWnK5FmCQ3qD2KSH2KwLUw2gLQ.png"
-                alt="PIV turbulent jet"
-                loading="lazy"
-              />
-              <figcaption>Full chain: acquisition → correlation...</figcaption>
-            </figure>
-
-            <figure class="mini-media">
-              <img
-                src="assets/PIV_setup.png"
-                alt="Experimental setup for PIV"
-                loading="lazy"
-              />
-              <figcaption>PIV Experimental Setup</figcaption>
-            </figure>
-          </div>
-
-          <p class="lead mt-sm" style="font-size: 15px;">Experimental setup and <strong>python</strong> based post-processing for <strong>PIV (Particle Image velocimetry)</strong> analysis of a turbulent water jet : Instrument integration, image acquisition, <strong>cross correlation</strong> analysis and validation against commercial software.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-<!-- COMPLETE ACADEMIC PROJECT LIST -->
-<section class="sec" id="academic-portfolio">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker">Academic Foundation</p>
-      <h2>Simulation & Instrumentation in Mechanics — UGA</h2>
-      <p class="sub">
-        Full overview of academic projects covering numerical simulation, experimental mechanics,
-        scientific computing and multiphysics.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <div class="card pad">
-        <h3>Mechanical simulation: Solid mechanics</h3>
-        <ul class="list">
-          <li>Mechanical analysis on spring washer using <strong>ANSYS APDL</strong>.</li>
-          <li>Advanced modeling of a polyamide clip : from linear elasticity to realistic <strong>nonlinear</strong> contact simulation.</li>
-          <li><strong>Hyper elastic</strong> modeling of fiber-Reinforced Biological tissue : "parametric study of anisotropy".</li>
-          <li>Conception numérique à partir d'un scan 3D et <strong>optimisation topologique</strong> d’un étrier de frein U-Brake pour vélo BMX en fabrication additive.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Thermal simulations:</h3>
-        <ul class="list">
-          <li>Numerical thermal simulation of a high temperature pipe in <strong>ANSYS</strong> : meshing strategy, BC, convergence study, time-dependent temperature evolution.</li>
-          <li><strong>CFD</strong> investigation of heat transfer caused by natural convection in a double glazed argon filled window : ANSYS heat transfer modeling using <strong>Boussinesq</strong> approximation, Heat flux analysis, and thermal resistance assessment.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Fluid mechanics :</h3>
-        <ul class="list">
-          <li>Numerical Simulation and comparative analysis of <strong>Scalar transport</strong>, <strong>Burger</strong>, <strong>Euler</strong> and <strong>Navier-Stokes</strong> equations : Shock development, thermal gradient diffusion, and compressible Poiseuille flow using <strong>Fortran</strong>-based <strong>CFD</strong> codes under Linux.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Mechanical instrumentation: Vibrations</h3>
-        <ul class="list">
-          <li>Experimental vibration analysis of a Percussed gong : acoustic Data acquisition, impact-dependent energy cascade dynamics, and <strong>python</strong>-based <strong>FFT</strong> / Power Spectral Density processing.</li>
-          <li>Characterization of parametric instabilities through experimental measurements for : Pendulum <strong>oscillations</strong> ; <strong>Faraday</strong> surface modes.</li>
-          <li>Experimental determination of the dynamic properties of a cable stayed pedestrian bridge through controlled excitation using seismic sensors ; frequency-domain analysis and calculating static max load through a simplified 2D model.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Fluid mechanics : (Experimental)</h3>
-        <ul class="list">
-          <li>Optical tracking of a floating sphere in a turbulent jet flow with a high speed camera using : circle detection "hough", correlation method, and comparative signal processing in <strong>python</strong>.</li>
-          <li>Wind tunnel testing : measurements using <strong>pitot</strong>, <strong>Cobra</strong> and <strong>hot wire</strong> probes, python-Based post processing and comparative analysis of probe technologies for velocity and turbulence (<strong>Von Karman vortex</strong>, <strong>Kelvin Helmholtz</strong> instability) fields.</li>
-          <li>Experimental setup and python based post-processing for <strong>PIV</strong> (Particle Image velocimetry) analysis of a turbulent water jet : Instrument integration, image acquisition, cross correlation analysis and validation against commercial software.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Programming :</h3>
-        <ul class="list">
-          <li>From scratch <strong>Python</strong> implementation of Finite element simulation (<strong>FEM</strong>) of a 2D plate’s deformation, displacement and constraints with controlled mesh, BC and material properties.</li>
-          <li>From scratch <strong>Python</strong> development of a <strong>FEM</strong> code/solver for a restrained beam : vibration and modal analysis, time dependent simulation using Newmark integration with controlled mesh, dynamic BC, damping, material properties …etc.</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <h3>Fatigue & Durabilité</h3>
-        <ul class="list">
-          <li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li>
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</section>
-  <!-- SKILLS -->
-  <section class="sec" id="skills">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker">CAE Skillset</p>
-      <h2>Tools and technical strengths</h2>
-      <p class="sub">
-        A compact view of the technical capabilities I use in professional simulation work.
-      </p>
-    </div>
-
-    <div class="grid-2">
-
-      <!-- Approach -->
-      <div class="card pad">
-  <h3>Engineering workflow</h3>
-  <ul class="list">
-    <li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li>
-    <li>Strong foundation in <strong>solid and fluid mechanics</strong></li>
-    <li>Simulation combined with <strong>instrumentation and physical testing</strong></li>
-    <li>Structured problem-solving rooted in continuum mechanics</li>
-  </ul>
-</div>
-
-      <!-- Skills -->
-      <div class="card pad">
-        <h3>Core competencies</h3>
-        <div class="chips">
-          <span><strong>FEM</strong> (2D/3D)</span>
-          <span><strong>Structural analysis</strong></span>
-          <span><strong>Vibration analysis</strong></span>
-          <span><strong>Crash simulation workflow</strong></span>
-          <span><strong>CFD</strong> (convection, transport)</span>
-          <span><strong>Non-linear contact</strong></span>
-          <span><strong>Thermal simulation</strong></span>
-          <span><strong>Fatigue</strong> (Goodman, Miner)</span>
-          <span><strong>PIV</strong> / turbulence diagnostics</span>
-          <span><strong>Scientific computing</strong></span>
-        </div>
-
-        <div class="mt">
-          <h3 style="margin-top:0;">Tools</h3>
-          <div class="chips">
-            <span>Abaqus</span>
-            <span>LS-DYNA</span>
-            <span>ANSA</span>
-            <span>META</span>
-            <span>ANSYS Fluent</span>
-            <span>COMSOL</span>
-            <span>CATIA V5</span>
-            <span>SolidWorks</span>
-            <span>Python</span>
-            <span>MATLAB</span>
-            <span>Fortran</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- TESTIMONIALS -->
-  <section class="sec" id="testimonials">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Testimonials</p>
-        <h2>Recommendation Letters</h2>
-        <p class="sub">
-          Endorsements supporting my professional experience, technical communication and language proficiency.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <article class="card pad">
-          <div class="proj-head">
-            <h3>Capgemini Engineering Tutor</h3>
-          </div>
-          <p class="lead mt-sm" style="font-size: 15px;">A letter of appreciation from my tutor at Capgemini highlighting my contributions to the optimization of an internal clutch mechanism.</p>
-          <a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/appreciation_letter_Cap_Anas Ghanim.pdf">
-            View PDF Document
-          </a>
-        </article>
-
-        <article class="card pad">
-          <div class="proj-head">
-            <h3>English Professor</h3>
-          </div>
-          <p class="lead mt-sm" style="font-size: 15px;">A recommendation letter from my English professor recognizing my enhanced professional English proficiency and communication skills.</p>
-          <a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/Recommendation_letter_Anas_Gh.pdf">
-            View PDF Document
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-  <!-- CONTACT -->
-  <footer class="foot" id="contact">
-    <div class="wrap foot-grid">
-      <div>
-        <p class="kicker">Contact</p>
-        <h2>Let’s connect</h2>
-        <p class="sub">
-          Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.
-        </p>
-      </div>
-
-      <div class="card pad">
-        <p class="kicker">Email</p>
-        <p class="mono"><a href="mailto:anass.ghanim01@gmail.com">anass.ghanim01@gmail.com</a></p>
-
-        <p class="kicker mt-sm">Phone</p>
-        <p class="mono"><a href="tel:+33613406301">+33 6 13 40 63 01</a></p>
-
-        <p class="kicker mt-sm">LinkedIn</p>
-        <p class="mono">
-          <a target="_blank" rel="noopener"
-             href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">
-            linkedin.com/in/anas-ghanim-70699a233
-          </a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
+<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Engineering Approach</p><h2>Simulation workflow</h2></div><div class="card pad"><ul class="list"><li>Translate physical behavior into robust finite element models</li><li>Connect simulation results to geometry, material and design decisions</li><li>Prepare solver-ready models with controlled mesh, loads, boundary conditions and output requests</li><li>Post-process deformation, energy and vibration response for technical reviews</li></ul></div></div></section>
+  <section class="sec" id="projects"><div class="wrap"><div class="sec-head"><p class="kicker">Selected Projects</p><h2>Applied mechanics and validation projects</h2><p class="sub">Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.</p></div><div class="stack">
+        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">Polyamide clip — non-linear contact</h3><p class="meta">ANSYS APDL • large deformation • contact realism</p></div><div class="clip-grid"><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rsq3aAHqWjr8aC5TgLM9G8RlMie64yP1jSORcQVw.png" alt="Clip full geometry" loading="lazy" /><figcaption>Full geometry</figcaption></figure><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/01Rqw53Jgonycbr6Jchzc1KH2OcMRBQE59e4NsaQ.png" alt="Meshing & contact with cylinder" loading="lazy" /><figcaption>Mesh & contact with cylinder</figcaption></figure></div><p class="lead mt-sm" style="font-size: 15px;">Advanced modeling of a polyamide clip : from <strong>linear elasticity</strong> to realistic <strong>nonlinear contact</strong> simulation.</p></article>
+        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">Skateboard axle — stress & fatigue life</h3><p class="meta">Goodman correction • Miner rule • design under cyclic loads</p></div><figure class="wide-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/xLxhiLfXve1dlYHd4GiCNLY1BEirKIhclE2RlWqT.png" alt="Skateboard axle fatigue" loading="lazy" /><figcaption>Stress field + fatigue life estimation (Goodman / Miner).</figcaption></figure><p class="lead mt-sm" style="font-size: 15px;">Mechanical and <strong>fatigue assessment</strong> of a skateboard axle : static stress, numerical <strong>fatigue life prediction</strong> using <strong>Goodman correction</strong>, and <strong>Miner’s damage</strong>.</p></article>
+        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">PIV — turbulent water jet</h3><p class="meta">Experimental setup • cross-correlation • Python post-processing</p></div><div class="clip-grid"><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/KCJyXAnEDHlBXgwWnK5FmCQ3qD2KSH2KwLUw2gLQ.png" alt="PIV turbulent jet" loading="lazy" /><figcaption>Full chain: acquisition → correlation...</figcaption></figure><figure class="mini-media"><img src="assets/PIV_setup.png" alt="Experimental setup for PIV" loading="lazy" /><figcaption>PIV Experimental Setup</figcaption></figure></div><p class="lead mt-sm" style="font-size: 15px;">Experimental setup and <strong>python</strong> based post-processing for <strong>PIV (Particle Image velocimetry)</strong> analysis of a turbulent water jet : Instrument integration, image acquisition, <strong>cross correlation</strong> analysis and validation against commercial software.</p></article>
+      </div></div></section>
+<section class="sec" id="academic-portfolio"><div class="wrap"><div class="sec-head"><p class="kicker">Academic Foundation</p><h2>Simulation & Instrumentation in Mechanics — UGA</h2><p class="sub">Full overview of academic projects covering numerical simulation, experimental mechanics, scientific computing and multiphysics.</p></div><div class="grid-3">
+      <div class="card pad"><h3>Mechanical simulation: Solid mechanics</h3><ul class="list"><li>Mechanical analysis on spring washer using <strong>ANSYS APDL</strong>.</li><li>Advanced modeling of a polyamide clip : from linear elasticity to realistic <strong>nonlinear</strong> contact simulation.</li><li><strong>Hyper elastic</strong> modeling of fiber-Reinforced Biological tissue : "parametric study of anisotropy".</li><li>Conception numérique à partir d'un scan 3D et <strong>optimisation topologique</strong> d’un étrier de frein U-Brake pour vélo BMX en fabrication additive.</li></ul></div>
+      <div class="card pad"><h3>Thermal simulations:</h3><ul class="list"><li>Numerical thermal simulation of a high temperature pipe in <strong>ANSYS</strong> : meshing strategy, BC, convergence study, time-dependent temperature evolution.</li><li><strong>CFD</strong> investigation of heat transfer caused by natural convection in a double glazed argon filled window : ANSYS heat transfer modeling using <strong>Boussinesq</strong> approximation, Heat flux analysis, and thermal resistance assessment.</li></ul></div>
+      <div class="card pad"><h3>Fluid mechanics :</h3><ul class="list"><li>Numerical Simulation and comparative analysis of <strong>Scalar transport</strong>, <strong>Burger</strong>, <strong>Euler</strong> and <strong>Navier-Stokes</strong> equations : Shock development, thermal gradient diffusion, and compressible Poiseuille flow using <strong>Fortran</strong>-based <strong>CFD</strong> codes under Linux.</li></ul></div>
+      <div class="card pad"><h3>Mechanical instrumentation: Vibrations</h3><ul class="list"><li>Experimental vibration analysis of a Percussed gong : acoustic Data acquisition, impact-dependent energy cascade dynamics, and <strong>python</strong>-based <strong>FFT</strong> / Power Spectral Density processing.</li><li>Characterization of parametric instabilities through experimental measurements for : Pendulum <strong>oscillations</strong> ; <strong>Faraday</strong> surface modes.</li><li>Experimental determination of the dynamic properties of a cable stayed pedestrian bridge through controlled excitation using seismic sensors ; frequency-domain analysis and calculating static max load through a simplified 2D model.</li></ul></div>
+      <div class="card pad"><h3>Fluid mechanics : (Experimental)</h3><ul class="list"><li>Optical tracking of a floating sphere in a turbulent jet flow with a high speed camera using : circle detection "hough", correlation method, and comparative signal processing in <strong>python</strong>.</li><li>Wind tunnel testing : measurements using <strong>pitot</strong>, <strong>Cobra</strong> and <strong>hot wire</strong> probes, python-Based post processing and comparative analysis of probe technologies for velocity and turbulence (<strong>Von Karman vortex</strong>, <strong>Kelvin Helmholtz</strong> instability) fields.</li><li>Experimental setup and python based post-processing for <strong>PIV</strong> (Particle Image velocimetry) analysis of a turbulent water jet : Instrument integration, image acquisition, cross correlation analysis and validation against commercial software.</li></ul></div>
+      <div class="card pad"><h3>Programming :</h3><ul class="list"><li>From scratch <strong>Python</strong> implementation of Finite element simulation (<strong>FEM</strong>) of a 2D plate’s deformation, displacement and constraints with controlled mesh, BC and material properties.</li><li>From scratch <strong>Python</strong> development of a <strong>FEM</strong> code/solver for a restrained beam : vibration and modal analysis, time dependent simulation using Newmark integration with controlled mesh, dynamic BC, damping, material properties …etc.</li></ul></div>
+      <div class="card pad"><h3>Fatigue & Durabilité</h3><ul class="list"><li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li></ul></div>
+    </div></div></section>
+  <section class="sec" id="skills"><div class="wrap"><div class="sec-head"><p class="kicker">CAE Skillset</p><h2>Tools and technical strengths</h2><p class="sub">A compact view of the technical capabilities I use in professional simulation work.</p></div><div class="grid-2"><div class="card pad"><h3>Engineering workflow</h3><ul class="list"><li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li><li>Strong foundation in <strong>solid and fluid mechanics</strong></li><li>Simulation combined with <strong>instrumentation and physical testing</strong></li><li>Structured problem-solving rooted in continuum mechanics</li></ul></div><div class="card pad"><h3>Core competencies</h3><div class="chips"><span><strong>FEM</strong> (2D/3D)</span><span><strong>Structural analysis</strong></span><span><strong>Vibration analysis</strong></span><span><strong>Crash simulation workflow</strong></span><span><strong>CFD</strong> (convection, transport)</span><span><strong>Non-linear contact</strong></span><span><strong>Thermal simulation</strong></span><span><strong>Fatigue</strong> (Goodman, Miner)</span><span><strong>PIV</strong> / turbulence diagnostics</span><span><strong>Scientific computing</strong></span></div><div class="mt"><h3 style="margin-top:0;">Tools</h3><div class="chips"><span>Abaqus</span><span>LS-DYNA</span><span>ANSA</span><span>META</span><span>ANSYS Fluent</span><span>COMSOL</span><span>CATIA V5</span><span>SolidWorks</span><span>Python</span><span>MATLAB</span><span>Fortran</span></div></div></div></div></div></section>
+  <section class="sec" id="testimonials"><div class="wrap"><div class="sec-head"><p class="kicker">Testimonials</p><h2>Recommendation Letters</h2><p class="sub">Endorsements supporting my professional experience, technical communication and language proficiency.</p></div><div class="grid-2"><article class="card pad"><div class="proj-head"><h3>Capgemini Engineering Tutor</h3></div><p class="lead mt-sm" style="font-size: 15px;">A letter of appreciation from my tutor at Capgemini highlighting my contributions to the optimization of an internal clutch mechanism.</p><a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/appreciation_letter_Cap_Anas Ghanim.pdf">View PDF Document</a></article><article class="card pad"><div class="proj-head"><h3>English Professor</h3></div><p class="lead mt-sm" style="font-size: 15px;">A recommendation letter from my English professor recognizing my enhanced professional English proficiency and communication skills.</p><a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/Recommendation_letter_Anas_Gh.pdf">View PDF Document</a></article></div></div></section>
+  <footer class="foot" id="contact"><div class="wrap foot-grid"><div><p class="kicker">Contact</p><h2>Let’s connect</h2><p class="sub">Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.</p></div><div class="card pad"><p class="kicker">Email</p><p class="mono"><a href="mailto:anass.ghanim01@gmail.com">anass.ghanim01@gmail.com</a></p><p class="kicker mt-sm">Phone</p><p class="mono"><a href="tel:+33613406301">+33 6 13 40 63 01</a></p><p class="kicker mt-sm">LinkedIn</p><p class="mono"><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">linkedin.com/in/anas-ghanim-70699a233</a></p></div></div></footer>
   <script>
-    // Smooth scrolling for anchor links with offset for fixed header
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if (!el) return;
-        
-        const headerOffset = 80;
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-        window.scrollTo({
-           top: offsetPosition,
-           behavior: "smooth"
-        });
-      });
-    });
-
-    // Intersection Observer for Scroll Animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          // Optional: stop observing once animated to keep it visible
-          // observer.unobserve(entry.target); 
-        }
-      });
-    }, observerOptions);
-
-    // Add reveal class to sections and cards dynamically
-    document.querySelectorAll('.sec-head, .card, .hero-grid > div, .foot-card').forEach(el => {
-      el.classList.add('reveal');
-      observer.observe(el);
-    });
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.topnav');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', (e) => { e.preventDefault(); const id = a.getAttribute('href'); const el = document.querySelector(id); if (!el) return; const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: "smooth" }); }); });
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } }); }, observerOptions);
+    document.querySelectorAll('.sec-head, .card, .hero-grid > div, .foot-card').forEach(el => { el.classList.add('reveal'); observer.observe(el); });
+    window.addEventListener('scroll', () => { const header = document.querySelector('.topnav'); if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
   </script>
 </body>
 </html>
