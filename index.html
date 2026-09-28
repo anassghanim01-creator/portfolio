@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width,initial-scale=1' />
   <title>Anas Ghanim — Mechanical Simulation & Validation</title>
-  <meta name="description" content="Portfolio — Mechanical simulation and validation engineer focused on FEA, Abaqus, LS-DYNA, structural analysis, vibration, crash simulation and experimental validation." />
+  <meta name='description' content='Portfolio — Mechanical simulation and validation engineer focused on FEA, Abaqus, LS-DYNA, structural analysis, vibration, crash simulation and experimental validation.' />
 
   <!-- Google Fonts: Outfit for headers, Inter for body -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
 
   <style>
     :root {
@@ -108,6 +108,41 @@
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .experience-visuals { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; }
     .experience-figure img { height: 360px; object-fit: contain; }
+    .academic-toggle {
+      padding: 28px;
+      cursor: pointer;
+    }
+    .academic-toggle summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+    .academic-toggle summary::-webkit-details-marker { display: none; }
+    .academic-toggle .summary-copy { display: grid; gap: 8px; }
+    .academic-toggle .summary-title { font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+    .academic-toggle .summary-sub { color: var(--muted); line-height: 1.7; max-width: 85ch; }
+    .academic-toggle .summary-action {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      background: rgba(34, 211, 238, 0.10);
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .academic-toggle[open] .summary-action::before { content: 'Hide projects'; }
+    .academic-toggle:not([open]) .summary-action::before { content: 'Show projects'; }
+    .academic-toggle .academic-content { margin-top: 28px; cursor: default; }
     #experience .reveal { opacity: 1 !important; transform: none !important; }
     .stack { display: grid; gap: 24px; }
 
@@ -353,83 +388,83 @@
   </style>
 </head>
 <body>
-  <div class="topnav">
-    <div class="wrap">
-      <div class="badge"><span class="dot"></span> Anas Ghanim</div>
-      <nav class="navlinks">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+  <div class='topnav'>
+    <div class='wrap'>
+      <div class='badge'><span class='dot'></span> Anas Ghanim</div>
+      <nav class='navlinks'>
+        <a href='#experience'>Experience</a>
+        <a href='#projects'>Projects</a>
+        <a href='#skills'>Skills</a>
+        <a href='#testimonials'>Testimonials</a>
+        <a href='#contact'>Contact</a>
       </nav>
     </div>
   </div>
-  <header class="hero">
-  <div class="wrap hero-grid">
+  <header class='hero'>
+  <div class='wrap hero-grid'>
     <div>
-      <div class="badge"><span class="dot"></span> Mechanical Simulation & Validation</div>
+      <div class='badge'><span class='dot'></span> Mechanical Simulation & Validation</div>
       <h1>Anas Ghanim</h1>
-      <p class="lead">Hi, I’m Anas — a mechanical simulation and validation engineer focused on automotive CAE, finite element modeling, structural analysis, vibration analysis and crash simulation workflows.</p>
-      <p class="lead">My professional experience connects simulation preparation, solver execution, post-processing and engineering interpretation to support concrete design decisions. I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from <strong>Université Grenoble Alpes (UGA)</strong>.</p>
-      <div class="cta">
-        <a class="btn btn-link" target="_blank" rel="noopener" href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html">Master SIM — UGA</a>
-        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">LinkedIn</a>
+      <p class='lead'>Hi, I’m Anas — a mechanical simulation and validation engineer focused on automotive CAE, finite element modeling, structural analysis, vibration analysis and crash simulation workflows.</p>
+      <p class='lead'>My professional experience connects simulation preparation, solver execution, post-processing and engineering interpretation to support concrete design decisions. I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from <strong>Université Grenoble Alpes (UGA)</strong>.</p>
+      <div class='cta'>
+        <a class='btn btn-link' target='_blank' rel='noopener' href='https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html'>Master SIM — UGA</a>
+        <a class='btn btn-ghost' target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>LinkedIn</a>
       </div>
-      <div class="chips"><span>French — Professional</span><span>English — Professional</span></div>
+      <div class='chips'><span>French — Professional</span><span>English — Professional</span></div>
     </div>
-    <div class="hero-visual reveal active"><img src="assets/profile_pic_1.png" alt="Anas Ghanim" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;"></div>
+    <div class='hero-visual reveal active'><img src='assets/profile_pic_1.png' alt='Anas Ghanim' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;'></div>
   </div>
 </header>
-  <section class="sec" id="experience">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Experience</p>
+  <section class='sec' id='experience'>
+    <div class='wrap'>
+      <div class='sec-head'>
+        <p class='kicker'>Experience</p>
         <h2>Professional CAE Experience</h2>
-        <p class="sub">Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.</p>
+        <p class='sub'>Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.</p>
       </div>
-      <div class="experience-visuals">
-        <figure class="card media experience-figure">
-          <img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png" alt="AT6 automatic transmission context" loading="lazy" />
+      <div class='experience-visuals'>
+        <figure class='card media experience-figure'>
+          <img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png' alt='AT6 automatic transmission context' loading='lazy' />
           <figcaption><strong>Capgemini Engineering:</strong> automatic transmission context for internal clutch optimization work.</figcaption>
         </figure>
-        <figure class="card media experience-figure">
-          <img src="assets/renault-crash-context.svg?v=873c235" alt="Blurred full-vehicle crash simulation model" loading="lazy" />
+        <figure class='card media experience-figure'>
+          <img src='assets/renault-crash-context.svg?v=99ea2ff' alt='Blurred full-vehicle crash simulation model' loading='lazy' />
           <figcaption><strong>Renault Group Engineering:</strong> blurred, confidentiality-safe crash simulation model context.</figcaption>
         </figure>
       </div>
-      <div class="grid-2 mt">
-        <div class="card pad">
+      <div class='grid-2 mt'>
+        <div class='card pad'>
           <h3>Capgemini Engineering — transmission CAE</h3>
-          <ul class="list"><li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li><li>Supported the design team with geometry and material update recommendations based on simulation results</li><li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li><li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li></ul>
+          <ul class='list'><li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li><li>Supported the design team with geometry and material update recommendations based on simulation results</li><li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li><li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li></ul>
         </div>
-        <div class="card pad">
+        <div class='card pad'>
           <h3>Renault Group Engineering — crash simulation workflow</h3>
-          <ul class="list"><li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li><li>Applied boundary conditions and configured output requests for post-processing extraction</li><li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li><li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li></ul>
+          <ul class='list'><li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li><li>Applied boundary conditions and configured output requests for post-processing extraction</li><li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li><li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li></ul>
         </div>
       </div>
     </div>
   </section>
-<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Engineering Approach</p><h2>Simulation workflow</h2></div><div class="card pad"><ul class="list"><li>Translate physical behavior into robust finite element models</li><li>Connect simulation results to geometry, material and design decisions</li><li>Prepare solver-ready models with controlled mesh, loads, boundary conditions and output requests</li><li>Post-process deformation, energy and vibration response for technical reviews</li></ul></div></div></section>
-  <section class="sec" id="projects"><div class="wrap"><div class="sec-head"><p class="kicker">Selected Projects</p><h2>Applied mechanics and validation projects</h2><p class="sub">Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.</p></div><div class="stack">
-        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">Polyamide clip — non-linear contact</h3><p class="meta">ANSYS APDL • large deformation • contact realism</p></div><div class="clip-grid"><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rsq3aAHqWjr8aC5TgLM9G8RlMie64yP1jSORcQVw.png" alt="Clip full geometry" loading="lazy" /><figcaption>Full geometry</figcaption></figure><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/01Rqw53Jgonycbr6Jchzc1KH2OcMRBQE59e4NsaQ.png" alt="Meshing & contact with cylinder" loading="lazy" /><figcaption>Mesh & contact with cylinder</figcaption></figure></div><p class="lead mt-sm" style="font-size: 15px;">Advanced modeling of a polyamide clip : from <strong>linear elasticity</strong> to realistic <strong>nonlinear contact</strong> simulation.</p></article>
-        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">Skateboard axle — stress & fatigue life</h3><p class="meta">Goodman correction • Miner rule • design under cyclic loads</p></div><figure class="wide-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/xLxhiLfXve1dlYHd4GiCNLY1BEirKIhclE2RlWqT.png" alt="Skateboard axle fatigue" loading="lazy" /><figcaption>Stress field + fatigue life estimation (Goodman / Miner).</figcaption></figure><p class="lead mt-sm" style="font-size: 15px;">Mechanical and <strong>fatigue assessment</strong> of a skateboard axle : static stress, numerical <strong>fatigue life prediction</strong> using <strong>Goodman correction</strong>, and <strong>Miner’s damage</strong>.</p></article>
-        <article class="card pad"><div class="proj-head"><h3 style="font-size: 20px; color: #ffffff;">PIV — turbulent water jet</h3><p class="meta">Experimental setup • cross-correlation • Python post-processing</p></div><div class="clip-grid"><figure class="mini-media"><img src="https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/KCJyXAnEDHlBXgwWnK5FmCQ3qD2KSH2KwLUw2gLQ.png" alt="PIV turbulent jet" loading="lazy" /><figcaption>Full chain: acquisition → correlation...</figcaption></figure><figure class="mini-media"><img src="assets/PIV_setup.png" alt="Experimental setup for PIV" loading="lazy" /><figcaption>PIV Experimental Setup</figcaption></figure></div><p class="lead mt-sm" style="font-size: 15px;">Experimental setup and <strong>python</strong> based post-processing for <strong>PIV (Particle Image velocimetry)</strong> analysis of a turbulent water jet : Instrument integration, image acquisition, <strong>cross correlation</strong> analysis and validation against commercial software.</p></article>
+<section class='sec'><div class='wrap'><div class='sec-head'><p class='kicker'>Engineering Approach</p><h2>Simulation workflow</h2></div><div class='card pad'><ul class='list'><li>Translate physical behavior into robust finite element models</li><li>Connect simulation results to geometry, material and design decisions</li><li>Prepare solver-ready models with controlled mesh, loads, boundary conditions and output requests</li><li>Post-process deformation, energy and vibration response for technical reviews</li></ul></div></div></section>
+  <section class='sec' id='projects'><div class='wrap'><div class='sec-head'><p class='kicker'>Selected Projects</p><h2>Applied mechanics and validation projects</h2><p class='sub'>Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.</p></div><div class='stack'>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>Polyamide clip — non-linear contact</h3><p class='meta'>ANSYS APDL • large deformation • contact realism</p></div><div class='clip-grid'><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rsq3aAHqWjr8aC5TgLM9G8RlMie64yP1jSORcQVw.png' alt='Clip full geometry' loading='lazy' /><figcaption>Full geometry</figcaption></figure><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/01Rqw53Jgonycbr6Jchzc1KH2OcMRBQE59e4NsaQ.png' alt='Meshing & contact with cylinder' loading='lazy' /><figcaption>Mesh & contact with cylinder</figcaption></figure></div><p class='lead mt-sm' style='font-size: 15px;'>Advanced modeling of a polyamide clip : from <strong>linear elasticity</strong> to realistic <strong>nonlinear contact</strong> simulation.</p></article>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>Skateboard axle — stress & fatigue life</h3><p class='meta'>Goodman correction • Miner rule • design under cyclic loads</p></div><figure class='wide-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/xLxhiLfXve1dlYHd4GiCNLY1BEirKIhclE2RlWqT.png' alt='Skateboard axle fatigue' loading='lazy' /><figcaption>Stress field + fatigue life estimation (Goodman / Miner).</figcaption></figure><p class='lead mt-sm' style='font-size: 15px;'>Mechanical and <strong>fatigue assessment</strong> of a skateboard axle : static stress, numerical <strong>fatigue life prediction</strong> using <strong>Goodman correction</strong>, and <strong>Miner’s damage</strong>.</p></article>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>PIV — turbulent water jet</h3><p class='meta'>Experimental setup • cross-correlation • Python post-processing</p></div><div class='clip-grid'><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/KCJyXAnEDHlBXgwWnK5FmCQ3qD2KSH2KwLUw2gLQ.png' alt='PIV turbulent jet' loading='lazy' /><figcaption>Full chain: acquisition → correlation...</figcaption></figure><figure class='mini-media'><img src='assets/PIV_setup.png' alt='Experimental setup for PIV' loading='lazy' /><figcaption>PIV Experimental Setup</figcaption></figure></div><p class='lead mt-sm' style='font-size: 15px;'>Experimental setup and <strong>python</strong> based post-processing for <strong>PIV (Particle Image velocimetry)</strong> analysis of a turbulent water jet : Instrument integration, image acquisition, <strong>cross correlation</strong> analysis and validation against commercial software.</p></article>
       </div></div></section>
-<section class="sec" id="academic-portfolio"><div class="wrap"><div class="sec-head"><p class="kicker">Academic Foundation</p><h2>Simulation & Instrumentation in Mechanics — UGA</h2><p class="sub">Full overview of academic projects covering numerical simulation, experimental mechanics, scientific computing and multiphysics.</p></div><div class="grid-3">
-      <div class="card pad"><h3>Mechanical simulation: Solid mechanics</h3><ul class="list"><li>Mechanical analysis on spring washer using <strong>ANSYS APDL</strong>.</li><li>Advanced modeling of a polyamide clip : from linear elasticity to realistic <strong>nonlinear</strong> contact simulation.</li><li><strong>Hyper elastic</strong> modeling of fiber-Reinforced Biological tissue : "parametric study of anisotropy".</li><li>Conception numérique à partir d'un scan 3D et <strong>optimisation topologique</strong> d’un étrier de frein U-Brake pour vélo BMX en fabrication additive.</li></ul></div>
-      <div class="card pad"><h3>Thermal simulations:</h3><ul class="list"><li>Numerical thermal simulation of a high temperature pipe in <strong>ANSYS</strong> : meshing strategy, BC, convergence study, time-dependent temperature evolution.</li><li><strong>CFD</strong> investigation of heat transfer caused by natural convection in a double glazed argon filled window : ANSYS heat transfer modeling using <strong>Boussinesq</strong> approximation, Heat flux analysis, and thermal resistance assessment.</li></ul></div>
-      <div class="card pad"><h3>Fluid mechanics :</h3><ul class="list"><li>Numerical Simulation and comparative analysis of <strong>Scalar transport</strong>, <strong>Burger</strong>, <strong>Euler</strong> and <strong>Navier-Stokes</strong> equations : Shock development, thermal gradient diffusion, and compressible Poiseuille flow using <strong>Fortran</strong>-based <strong>CFD</strong> codes under Linux.</li></ul></div>
-      <div class="card pad"><h3>Mechanical instrumentation: Vibrations</h3><ul class="list"><li>Experimental vibration analysis of a Percussed gong : acoustic Data acquisition, impact-dependent energy cascade dynamics, and <strong>python</strong>-based <strong>FFT</strong> / Power Spectral Density processing.</li><li>Characterization of parametric instabilities through experimental measurements for : Pendulum <strong>oscillations</strong> ; <strong>Faraday</strong> surface modes.</li><li>Experimental determination of the dynamic properties of a cable stayed pedestrian bridge through controlled excitation using seismic sensors ; frequency-domain analysis and calculating static max load through a simplified 2D model.</li></ul></div>
-      <div class="card pad"><h3>Fluid mechanics : (Experimental)</h3><ul class="list"><li>Optical tracking of a floating sphere in a turbulent jet flow with a high speed camera using : circle detection "hough", correlation method, and comparative signal processing in <strong>python</strong>.</li><li>Wind tunnel testing : measurements using <strong>pitot</strong>, <strong>Cobra</strong> and <strong>hot wire</strong> probes, python-Based post processing and comparative analysis of probe technologies for velocity and turbulence (<strong>Von Karman vortex</strong>, <strong>Kelvin Helmholtz</strong> instability) fields.</li><li>Experimental setup and python based post-processing for <strong>PIV</strong> (Particle Image velocimetry) analysis of a turbulent water jet : Instrument integration, image acquisition, cross correlation analysis and validation against commercial software.</li></ul></div>
-      <div class="card pad"><h3>Programming :</h3><ul class="list"><li>From scratch <strong>Python</strong> implementation of Finite element simulation (<strong>FEM</strong>) of a 2D plate’s deformation, displacement and constraints with controlled mesh, BC and material properties.</li><li>From scratch <strong>Python</strong> development of a <strong>FEM</strong> code/solver for a restrained beam : vibration and modal analysis, time dependent simulation using Newmark integration with controlled mesh, dynamic BC, damping, material properties …etc.</li></ul></div>
-      <div class="card pad"><h3>Fatigue & Durabilité</h3><ul class="list"><li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li></ul></div>
-    </div></div></section>
-  <section class="sec" id="skills"><div class="wrap"><div class="sec-head"><p class="kicker">CAE Skillset</p><h2>Tools and technical strengths</h2><p class="sub">A compact view of the technical capabilities I use in professional simulation work.</p></div><div class="grid-2"><div class="card pad"><h3>Engineering workflow</h3><ul class="list"><li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li><li>Strong foundation in <strong>solid and fluid mechanics</strong></li><li>Simulation combined with <strong>instrumentation and physical testing</strong></li><li>Structured problem-solving rooted in continuum mechanics</li></ul></div><div class="card pad"><h3>Core competencies</h3><div class="chips"><span><strong>FEM</strong> (2D/3D)</span><span><strong>Structural analysis</strong></span><span><strong>Vibration analysis</strong></span><span><strong>Crash simulation workflow</strong></span><span><strong>CFD</strong> (convection, transport)</span><span><strong>Non-linear contact</strong></span><span><strong>Thermal simulation</strong></span><span><strong>Fatigue</strong> (Goodman, Miner)</span><span><strong>PIV</strong> / turbulence diagnostics</span><span><strong>Scientific computing</strong></span></div><div class="mt"><h3 style="margin-top:0;">Tools</h3><div class="chips"><span>Abaqus</span><span>LS-DYNA</span><span>ANSA</span><span>META</span><span>ANSYS Fluent</span><span>COMSOL</span><span>CATIA V5</span><span>SolidWorks</span><span>Python</span><span>MATLAB</span><span>Fortran</span></div></div></div></div></div></section>
-  <section class="sec" id="testimonials"><div class="wrap"><div class="sec-head"><p class="kicker">Testimonials</p><h2>Recommendation Letters</h2><p class="sub">Endorsements supporting my professional experience, technical communication and language proficiency.</p></div><div class="grid-2"><article class="card pad"><div class="proj-head"><h3>Capgemini Engineering Tutor</h3></div><p class="lead mt-sm" style="font-size: 15px;">A letter of appreciation from my tutor at Capgemini highlighting my contributions to the optimization of an internal clutch mechanism.</p><a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/appreciation_letter_Cap_Anas Ghanim.pdf">View PDF Document</a></article><article class="card pad"><div class="proj-head"><h3>English Professor</h3></div><p class="lead mt-sm" style="font-size: 15px;">A recommendation letter from my English professor recognizing my enhanced professional English proficiency and communication skills.</p><a class="btn btn-ghost mt-sm" target="_blank" rel="noopener" href="assets/Recommendation_letter_Anas_Gh.pdf">View PDF Document</a></article></div></div></section>
-  <footer class="foot" id="contact"><div class="wrap foot-grid"><div><p class="kicker">Contact</p><h2>Let’s connect</h2><p class="sub">Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.</p></div><div class="card pad"><p class="kicker">Email</p><p class="mono"><a href="mailto:anass.ghanim01@gmail.com">anass.ghanim01@gmail.com</a></p><p class="kicker mt-sm">Phone</p><p class="mono"><a href="tel:+33613406301">+33 6 13 40 63 01</a></p><p class="kicker mt-sm">LinkedIn</p><p class="mono"><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM">linkedin.com/in/anas-ghanim-70699a233</a></p></div></div></footer>
+<section class='sec' id='academic-portfolio'><div class='wrap'><div class='sec-head'><p class='kicker'>Academic Foundation</p></div><details class='card academic-toggle'><summary><span class='summary-copy'><span class='summary-title'>Simulation & Instrumentation in Mechanics — UGA</span><span class='summary-sub'>Academic project archive covering numerical simulation, experimental mechanics, scientific computing and multiphysics. Kept collapsed by default so professional CAE experience stays first.</span></span><span class='summary-action' aria-hidden='true'></span></summary><div class='academic-content grid-3'>
+      <div class='card pad'><h3>Mechanical simulation: Solid mechanics</h3><ul class='list'><li>Mechanical analysis on spring washer using <strong>ANSYS APDL</strong>.</li><li>Advanced modeling of a polyamide clip : from linear elasticity to realistic <strong>nonlinear</strong> contact simulation.</li><li><strong>Hyper elastic</strong> modeling of fiber-Reinforced Biological tissue : 'parametric study of anisotropy'.</li><li>Conception numérique à partir d'un scan 3D et <strong>optimisation topologique</strong> d’un étrier de frein U-Brake pour vélo BMX en fabrication additive.</li></ul></div>
+      <div class='card pad'><h3>Thermal simulations:</h3><ul class='list'><li>Numerical thermal simulation of a high temperature pipe in <strong>ANSYS</strong> : meshing strategy, BC, convergence study, time-dependent temperature evolution.</li><li><strong>CFD</strong> investigation of heat transfer caused by natural convection in a double glazed argon filled window : ANSYS heat transfer modeling using <strong>Boussinesq</strong> approximation, Heat flux analysis, and thermal resistance assessment.</li></ul></div>
+      <div class='card pad'><h3>Fluid mechanics :</h3><ul class='list'><li>Numerical Simulation and comparative analysis of <strong>Scalar transport</strong>, <strong>Burger</strong>, <strong>Euler</strong> and <strong>Navier-Stokes</strong> equations : Shock development, thermal gradient diffusion, and compressible Poiseuille flow using <strong>Fortran</strong>-based <strong>CFD</strong> codes under Linux.</li></ul></div>
+      <div class='card pad'><h3>Mechanical instrumentation: Vibrations</h3><ul class='list'><li>Experimental vibration analysis of a Percussed gong : acoustic Data acquisition, impact-dependent energy cascade dynamics, and <strong>python</strong>-based <strong>FFT</strong> / Power Spectral Density processing.</li><li>Characterization of parametric instabilities through experimental measurements for : Pendulum <strong>oscillations</strong> ; <strong>Faraday</strong> surface modes.</li><li>Experimental determination of the dynamic properties of a cable stayed pedestrian bridge through controlled excitation using seismic sensors ; frequency-domain analysis and calculating static max load through a simplified 2D model.</li></ul></div>
+      <div class='card pad'><h3>Fluid mechanics : (Experimental)</h3><ul class='list'><li>Optical tracking of a floating sphere in a turbulent jet flow with a high speed camera using : circle detection 'hough', correlation method, and comparative signal processing in <strong>python</strong>.</li><li>Wind tunnel testing : measurements using <strong>pitot</strong>, <strong>Cobra</strong> and <strong>hot wire</strong> probes, python-Based post processing and comparative analysis of probe technologies for velocity and turbulence (<strong>Von Karman vortex</strong>, <strong>Kelvin Helmholtz</strong> instability) fields.</li><li>Experimental setup and python based post-processing for <strong>PIV</strong> (Particle Image velocimetry) analysis of a turbulent water jet : Instrument integration, image acquisition, cross correlation analysis and validation against commercial software.</li></ul></div>
+      <div class='card pad'><h3>Programming :</h3><ul class='list'><li>From scratch <strong>Python</strong> implementation of Finite element simulation (<strong>FEM</strong>) of a 2D plate’s deformation, displacement and constraints with controlled mesh, BC and material properties.</li><li>From scratch <strong>Python</strong> development of a <strong>FEM</strong> code/solver for a restrained beam : vibration and modal analysis, time dependent simulation using Newmark integration with controlled mesh, dynamic BC, damping, material properties …etc.</li></ul></div>
+      <div class='card pad'><h3>Fatigue & Durabilité</h3><ul class='list'><li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li></ul></div>
+    </div></details></div></section>
+  <section class='sec' id='skills'><div class='wrap'><div class='sec-head'><p class='kicker'>CAE Skillset</p><h2>Tools and technical strengths</h2><p class='sub'>A compact view of the technical capabilities I use in professional simulation work.</p></div><div class='grid-2'><div class='card pad'><h3>Engineering workflow</h3><ul class='list'><li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li><li>Strong foundation in <strong>solid and fluid mechanics</strong></li><li>Simulation combined with <strong>instrumentation and physical testing</strong></li><li>Structured problem-solving rooted in continuum mechanics</li></ul></div><div class='card pad'><h3>Core competencies</h3><div class='chips'><span><strong>FEM</strong> (2D/3D)</span><span><strong>Structural analysis</strong></span><span><strong>Vibration analysis</strong></span><span><strong>Crash simulation workflow</strong></span><span><strong>CFD</strong> (convection, transport)</span><span><strong>Non-linear contact</strong></span><span><strong>Thermal simulation</strong></span><span><strong>Fatigue</strong> (Goodman, Miner)</span><span><strong>PIV</strong> / turbulence diagnostics</span><span><strong>Scientific computing</strong></span></div><div class='mt'><h3 style='margin-top:0;'>Tools</h3><div class='chips'><span>Abaqus</span><span>LS-DYNA</span><span>ANSA</span><span>META</span><span>ANSYS Fluent</span><span>COMSOL</span><span>CATIA V5</span><span>SolidWorks</span><span>Python</span><span>MATLAB</span><span>Fortran</span></div></div></div></div></div></section>
+  <section class='sec' id='testimonials'><div class='wrap'><div class='sec-head'><p class='kicker'>Testimonials</p><h2>Recommendation Letters</h2><p class='sub'>Endorsements supporting my professional experience, technical communication and language proficiency.</p></div><div class='grid-2'><article class='card pad'><div class='proj-head'><h3>Capgemini Engineering Tutor</h3></div><p class='lead mt-sm' style='font-size: 15px;'>A letter of appreciation from my tutor at Capgemini highlighting my contributions to the optimization of an internal clutch mechanism.</p><a class='btn btn-ghost mt-sm' target='_blank' rel='noopener' href='assets/appreciation_letter_Cap_Anas Ghanim.pdf'>View PDF Document</a></article><article class='card pad'><div class='proj-head'><h3>English Professor</h3></div><p class='lead mt-sm' style='font-size: 15px;'>A recommendation letter from my English professor recognizing my enhanced professional English proficiency and communication skills.</p><a class='btn btn-ghost mt-sm' target='_blank' rel='noopener' href='assets/Recommendation_letter_Anas_Gh.pdf'>View PDF Document</a></article></div></div></section>
+  <footer class='foot' id='contact'><div class='wrap foot-grid'><div><p class='kicker'>Contact</p><h2>Let’s connect</h2><p class='sub'>Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.</p></div><div class='card pad'><p class='kicker'>Email</p><p class='mono'><a href='mailto:anass.ghanim01@gmail.com'>anass.ghanim01@gmail.com</a></p><p class='kicker mt-sm'>Phone</p><p class='mono'><a href='tel:+33613406301'>+33 6 13 40 63 01</a></p><p class='kicker mt-sm'>LinkedIn</p><p class='mono'><a target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>linkedin.com/in/anas-ghanim-70699a233</a></p></div></div></footer>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', (e) => { e.preventDefault(); const id = a.getAttribute('href'); const el = document.querySelector(id); if (!el) return; const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: "smooth" }); }); });
+    document.querySelectorAll(`a[href^='#']`).forEach(a => { a.addEventListener('click', (e) => { e.preventDefault(); const id = a.getAttribute('href'); const el = document.querySelector(id); if (!el) return; const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); }); });
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } }); }, observerOptions);
     document.querySelectorAll('.sec-head, .card, .hero-grid > div, .foot-card').forEach(el => { el.classList.add('reveal'); observer.observe(el); });
@@ -437,3 +472,5 @@
   </script>
 </body>
 </html>
+
+
