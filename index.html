@@ -250,6 +250,7 @@
       color: #fff;
     }
     .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chips a { text-decoration: none; }
     .chips span {
       font-size: 13px;
       font-weight: 500;
@@ -395,7 +396,6 @@
         <a href='#experience'>Experience</a>
         <a href='#projects'>Projects</a>
         <a href='#skills'>Skills</a>
-        <a href='#testimonials'>Testimonials</a>
         <a href='#contact'>Contact</a>
       </nav>
     </div>
@@ -411,7 +411,7 @@
         <a class='btn btn-link' target='_blank' rel='noopener' href='https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html'>Master SIM — UGA</a>
         <a class='btn btn-ghost' target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>LinkedIn</a>
       </div>
-      <div class='chips'><span>French — Professional</span><span>English — Professional</span></div>
+      <div class='chips'><span>French — Professional</span><a target='_blank' rel='noopener' href='assets/Recommendation_letter_Anas_Gh.pdf' aria-label='Open English C1 recommendation letter'><span>English — Professional (C1)</span></a></div>
     </div>
     <div class='hero-visual reveal active'><img src='assets/professional-headshot-neutral.png' alt='Anas Ghanim professional headshot' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;'></div>
   </div>
@@ -461,7 +461,6 @@
       <div class='card pad'><h3>Fatigue & Durabilité</h3><ul class='list'><li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li></ul></div>
     </div></details></div></section>
   <section class='sec' id='skills'><div class='wrap'><div class='sec-head'><p class='kicker'>CAE Skillset</p><h2>Tools and technical strengths</h2><p class='sub'>A compact view of the technical capabilities I use in professional simulation work.</p></div><div class='grid-2'><div class='card pad'><h3>Engineering workflow</h3><ul class='list'><li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li><li>Strong foundation in <strong>solid and fluid mechanics</strong></li><li>Simulation combined with <strong>instrumentation and physical testing</strong></li><li>Structured problem-solving rooted in continuum mechanics</li></ul></div><div class='card pad'><h3>Core competencies</h3><div class='chips'><span><strong>FEM</strong> (2D/3D)</span><span><strong>Structural analysis</strong></span><span><strong>Vibration analysis</strong></span><span><strong>Crash simulation workflow</strong></span><span><strong>CFD</strong> (convection, transport)</span><span><strong>Non-linear contact</strong></span><span><strong>Thermal simulation</strong></span><span><strong>Fatigue</strong> (Goodman, Miner)</span><span><strong>PIV</strong> / turbulence diagnostics</span><span><strong>Scientific computing</strong></span></div><div class='mt'><h3 style='margin-top:0;'>Tools</h3><div class='chips'><span>Abaqus</span><span>LS-DYNA</span><span>ANSA</span><span>META</span><span>ANSYS Fluent</span><span>COMSOL</span><span>CATIA V5</span><span>SolidWorks</span><span>Python</span><span>MATLAB</span><span>Fortran</span></div></div></div></div></div></section>
-  <section class='sec' id='testimonials'><div class='wrap'><div class='sec-head'><p class='kicker'>Testimonials</p><h2>Recommendation Letters</h2><p class='sub'>Endorsements supporting my professional experience, technical communication and language proficiency.</p></div><div class='grid-2'><article class='card pad'><div class='proj-head'><h3>Capgemini Engineering Tutor</h3></div><p class='lead mt-sm' style='font-size: 15px;'>A letter of appreciation from my tutor at Capgemini highlighting my contributions to the optimization of an internal clutch mechanism.</p><a class='btn btn-ghost mt-sm' target='_blank' rel='noopener' href='assets/appreciation_letter_Cap_Anas Ghanim.pdf'>View PDF Document</a></article><article class='card pad'><div class='proj-head'><h3>English Professor</h3></div><p class='lead mt-sm' style='font-size: 15px;'>A recommendation letter from my English professor recognizing my enhanced professional English proficiency and communication skills.</p><a class='btn btn-ghost mt-sm' target='_blank' rel='noopener' href='assets/Recommendation_letter_Anas_Gh.pdf'>View PDF Document</a></article></div></div></section>
   <footer class='foot' id='contact'><div class='wrap foot-grid'><div><p class='kicker'>Contact</p><h2>Let’s connect</h2><p class='sub'>Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.</p></div><div class='card pad'><p class='kicker'>Email</p><p class='mono'><a href='mailto:anass.ghanim01@gmail.com'>anass.ghanim01@gmail.com</a></p><p class='kicker mt-sm'>Phone</p><p class='mono'><a href='tel:+33613406301'>+33 6 13 40 63 01</a></p><p class='kicker mt-sm'>LinkedIn</p><p class='mono'><a target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>linkedin.com/in/anas-ghanim-70699a233</a></p></div></div></footer>
   <script>
     document.querySelectorAll(`a[href^='#']`).forEach(a => { a.addEventListener('click', (e) => { e.preventDefault(); const id = a.getAttribute('href'); const el = document.querySelector(id); if (!el) return; const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); }); });
