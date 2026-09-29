@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width,initial-scale=1' />
+  <title>Anas Ghanim — Mechanical Simulation & Validation</title>
+  <meta name='description' content='Portfolio — Mechanical simulation and validation engineer focused on FEA, Abaqus, LS-DYNA, structural analysis, vibration, crash simulation and experimental validation.' />
+
+  <!-- Google Fonts: Outfit for headers, Inter for body -->
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
+
+  <style>
+    :root {
+      --bg: #080d18; /* Premium deep navy, less flat than pure black */
+      --bg2: #121a2a; /* Slightly lighter for cards/sections */
+      --card: rgba(20, 29, 46, 0.76); /* Glassmorphism base */
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --accent: #22d3ee; /* Cyan */
+      --accent-glow: rgba(34, 211, 238, 0.5);
+      --accent2: #818cf8; /* Indigo/Purple */
+      --accent2-glow: rgba(129, 140, 248, 0.5);
+      --border: rgba(148, 163, 184, 0.14);
+      --border-hover: rgba(125, 211, 252, 0.34);
+      --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.72);
+      --r: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      margin: 0; 
+      padding: 0; 
+      background:
+        radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(129, 140, 248, 0.10), transparent 30%),
+        radial-gradient(circle at 52% 62%, rgba(15, 23, 42, 0.94), transparent 44%),
+        linear-gradient(180deg, #0a1020 0%, #080d18 42%, #0b1020 100%);
+      background-attachment: fixed;
+      color: var(--text); 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+      overflow-x: hidden;
+    }
+    a { color: var(--text); text-decoration: none; transition: color 0.3s ease; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(1200px, 90vw); margin: 0 auto; }
+
+    /* Typography */
+    h1, h2, h3, .brand-font { font-family: 'Outfit', sans-serif; }
+    h1 { 
+      font-size: clamp(40px, 6vw, 72px); 
+      margin: 10px 0 16px; 
+      letter-spacing: -0.03em; 
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 30%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      margin: 20px 0 14px;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+    h3 { margin: 0 0 10px; font-size: 18px; letter-spacing: -0.01em; font-weight: 600; color: #fff; }
+    .kicker {
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(34, 211, 238, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+    .lead { color: var(--muted); line-height: 1.8; margin: 0 0 18px; max-width: 75ch; font-size: 1.1rem; }
+    .sub { color: var(--muted); line-height: 1.7; margin: 0; max-width: 90ch; font-size: 1.05rem; }
+    .meta { color: var(--muted); font-size: 14px; margin: 0; font-weight: 500; }
+
+    /* Layout & Glassmorphism */
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)),
+        var(--card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-hover);
+      box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.82), 0 0 34px rgba(34, 211, 238, 0.10);
+    }
+    .pad { padding: 24px; }
+    .mt { margin-top: 24px; }
+    .mt-sm { margin-top: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .experience-visuals { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; }
+    .experience-figure img { height: 360px; object-fit: contain; }
+    .academic-toggle {
+      padding: 28px;
+      cursor: pointer;
+    }
+    .academic-toggle summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+    .academic-toggle summary::-webkit-details-marker { display: none; }
+    .academic-toggle .summary-copy { display: grid; gap: 8px; }
+    .academic-toggle .summary-title { font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+    .academic-toggle .summary-sub { color: var(--muted); line-height: 1.7; max-width: 85ch; }
+    .academic-toggle .summary-action {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      background: rgba(34, 211, 238, 0.10);
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .academic-toggle[open] .summary-action::before { content: 'Hide projects'; }
+    .academic-toggle:not([open]) .summary-action::before { content: 'Show projects'; }
+    .academic-toggle .academic-content { margin-top: 28px; cursor: default; }
+    #experience .reveal { opacity: 1 !important; transform: none !important; }
+    .stack { display: grid; gap: 24px; }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 18% 28%, rgba(34, 211, 238, 0.13), transparent 34%),
+        radial-gradient(circle at 68% 70%, rgba(129, 140, 248, 0.14), transparent 38%),
+        linear-gradient(135deg, #08111d 0%, #070b14 55%, #0a0e1a 100%);
+    }
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      opacity: 0.15;
+      animation: pulse 8s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.1; }
+      100% { transform: scale(1.1) translate(20px, -20px); opacity: 0.2; }
+    }
+    .hero::before { background: var(--accent); top: -200px; left: -100px; }
+    .hero::after { background: var(--accent2); bottom: -200px; right: 20%; animation-delay: -4s; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(129,140,248,0.1));
+      border: 2px solid var(--border);
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.5), 0 0 40px rgba(34,211,238,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,255,255,0.1);
+      animation: spin 30s linear infinite;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    .hero-visual svg { width: 60%; height: 60%; color: var(--muted); opacity: 0.5; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg, rgba(34,211,238,0.13), rgba(129,140,248,0.07)),
+        rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(12px);
+      color: #e5eef8;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+      box-shadow: 0 14px 34px -24px rgba(34,211,238,0.75), inset 0 1px 0 rgba(255,255,255,0.07);
+    }
+    .dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent-glow), 0 0 34px rgba(34,211,238,0.35);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .cta { display: flex; gap: 16px; flex-wrap: wrap; margin: 32px 0 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+    }
+    .btn-link,
+    .btn-ghost,
+    .chips a span {
+      background: rgba(255,255,255,0.055);
+      color: #f8fafc;
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: 0 10px 28px -18px rgba(34,211,238,0.45);
+      backdrop-filter: blur(10px);
+    }
+    .btn-link:hover,
+    .btn-ghost:hover,
+    .chips a:hover span {
+      transform: translateY(-2px);
+      border-color: rgba(34,211,238,0.38);
+      background: rgba(34,211,238,0.10);
+      color: #fff;
+      box-shadow: 0 14px 34px -20px rgba(34,211,238,0.65);
+      filter: none;
+    }
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .chips a { text-decoration: none; display: inline-flex; align-items: center; }
+    .chips span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      transition: all 0.3s ease;
+    }
+    .chips > span:hover {
+      border-color: var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      transform: none;
+    }
+    .sec {
+      padding: 80px 0;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0)),
+        radial-gradient(circle at 50% 0%, rgba(34,211,238,0.035), transparent 34%);
+    }
+    .sec-head { margin-bottom: 40px; text-align: center; }
+    .sec-head h2 { display: inline-block; }
+    .sec-head .sub { margin: 0 auto; }
+    .sec-head .kicker { display: block; width: fit-content; margin: 0 auto 12px; }
+    figure { margin: 0; }
+    .media, .wide-media, .mini-media {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.58);
+      position: relative;
+    }
+    .media::after, .wide-media::after, .mini-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .media img, .wide-media img, .mini-media img {
+      width: 100%;
+      height: 320px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.6s ease;
+      padding: 20px;
+    }
+    .card:hover .media img, .card:hover .wide-media img, .card:hover .mini-media img { transform: scale(1.05); }
+    .wide-media img { height: 400px; padding: 30px; }
+    .mini-media img { height: 260px; padding: 15px; }
+    figcaption {
+      padding: 14px 20px;
+      color: var(--text);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      background: rgba(8, 13, 24, 0.58);
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 2;
+    }
+    .clip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .list { margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.8; }
+    .list li { margin-bottom: 12px; position: relative; }
+    .list li::marker { color: var(--accent); font-size: 1.2em; }
+    .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .topnav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 50;
+      background: rgba(8, 13, 24, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      transition: all 0.3s ease;
+    }
+    .topnav.scrolled { padding: 5px 0; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+    .topnav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; transition: padding 0.3s ease; }
+    .topnav.scrolled .wrap { padding: 10px 0; }
+    .navlinks { display: flex; gap: 8px; flex-wrap: wrap; background: rgba(15,23,42,0.58); padding: 4px; border-radius: 999px; border: 1px solid var(--border); }
+    .navlinks a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+    .navlinks a:hover, .navlinks a.active { color: var(--bg); background: #fff; }
+    .foot { padding: 80px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(8,13,24,0), rgba(15,23,42,0.74)); }
+    .foot::before {
+      content: '';
+      position: absolute;
+      bottom: -200px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 400px;
+      background: radial-gradient(ellipse at bottom, rgba(34,211,238,0.15) 0%, rgba(3,7,18,0) 70%);
+      pointer-events: none;
+    }
+    .foot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+    .foot-card { display: flex; flex-direction: column; justify-content: center; }
+    .mono { font-family: 'ui-monospace', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; font-size: 18px; margin: 5px 0 20px; }
+    .mono a { color: var(--accent); position: relative; }
+    .mono a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease; }
+    .mono a:hover::after { width: 100%; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .grid-2 .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .grid-3 .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .grid-3 .reveal:nth-child(3) { transition-delay: 0.2s; }
+    .grid-3 .reveal:nth-child(4) { transition-delay: 0.3s; }
+    .grid-3 .reveal:nth-child(5) { transition-delay: 0.4s; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+      .hero-grid .badge, .hero-grid .cta, .hero-grid .chips { justify-content: center; }
+      .hero-grid .lead { margin-left: auto; margin-right: auto; }
+      .hero-visual { margin: 30px auto 0; max-width: 250px; }
+      .foot-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 140px 0 40px; }
+      .sec { padding: 50px 0; }
+      .topnav .wrap { flex-direction: column; gap: 10px; padding: 10px 0; }
+      .navlinks { width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .navlinks::-webkit-scrollbar { display: none; }
+      .navlinks a { padding: 6px 14px; font-size: 13px; white-space: nowrap; }
+      .grid-2, .grid-3, .experience-visuals { grid-template-columns: 1fr; }
+      .clip-grid { grid-template-columns: 1fr; gap: 20px; }
+      .media img, .wide-media img, .mini-media img { padding: 10px; height: auto; max-height: 240px; }
+      h1 { font-size: clamp(32px, 8vw, 40px); margin-top: 0; }
+      h2 { font-size: clamp(24px, 6vw, 32px); }
+      .lead { font-size: 1rem; line-height: 1.6; }
+      .cta { flex-direction: column; align-items: stretch; gap: 12px; }
+      .cta a.btn { width: 100%; justify-content: center; }
+      .pad { padding: 20px; }
+    }
+    .card strong { color: #fff; font-weight: 600; }
+    .chips strong { color: #fff; }
+    .chips span:hover strong { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class='topnav'>
+    <div class='wrap'>
+      <div class='badge'><span class='dot'></span> Anas Ghanim</div>
+      <nav class='navlinks'>
+        <a href='#experience'>Experience</a>
+        <a href='#projects'>Projects</a>
+        <a href='#skills'>Skills</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+    </div>
+  </div>
+  <header class='hero'>
+  <div class='wrap hero-grid'>
+    <div>
+      <div class='badge'><span class='dot'></span> Mechanical Simulation & Validation Engineer</div>
+      <h1>Anas Ghanim</h1>
+      <p class='lead'>Hi, I’m Anas — a mechanical simulation and validation engineer focused on automotive CAE, finite element modeling, structural analysis, vibration analysis and crash simulation workflows.</p>
+      <p class='lead'>My professional experience connects simulation preparation, solver execution, post-processing and engineering interpretation to support concrete design decisions. I also hold a <strong>Master in Simulation & Instrumentation in Mechanics</strong> from <strong>Université Grenoble Alpes (UGA)</strong>.</p>
+      <div class='cta'>
+        <a class='btn btn-link' target='_blank' rel='noopener' href='https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-mecanique-IAQK579W/parcours-simulation-et-instrumentation-en-mecanique-1re-et-2e-annees-IAS8R70F.html'>Master SIM — UGA</a>
+        <a class='btn btn-ghost' target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>LinkedIn</a>
+      </div>
+      <div class='chips'><span>French — Professional</span><a target='_blank' rel='noopener' href='assets/Recommendation_letter_Anas_Gh.pdf' aria-label='Open English C1 recommendation letter'><span>English — Professional (C1)</span></a></div>
+    </div>
+    <div class='hero-visual reveal active'><img src='assets/professional-headshot-neutral.png' alt='Anas Ghanim professional headshot' style='width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 1;'></div>
+  </div>
+</header>
+  <section class='sec' id='experience'>
+    <div class='wrap'>
+      <div class='sec-head'>
+        <p class='kicker'>Experience</p>
+        <h2>Professional CAE Experience</h2>
+        <p class='sub'>Automotive simulation work across transmission component optimization and full-vehicle crash simulation workflows, with emphasis on model preparation, meshing, solver setup, post-processing and design feedback.</p>
+      </div>
+      <div class='experience-visuals'>
+        <figure class='card media experience-figure'>
+          <img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rtLPZQldb1dSiHtLVGX2t55RdW5pPgmDeOPI1iEG.png' alt='AT6 automatic transmission context' loading='lazy' />
+          <figcaption><strong>Capgemini Engineering:</strong> automatic transmission context for internal clutch optimization work.</figcaption>
+        </figure>
+        <figure class='card media experience-figure'>
+          <img src='assets/renault-crash-context.svg?v=99ea2ff' alt='Blurred full-vehicle crash simulation model' loading='lazy' />
+          <figcaption><strong>Renault Group Engineering:</strong> blurred, confidentiality-safe crash simulation model context.</figcaption>
+        </figure>
+      </div>
+      <div class='grid-2 mt'>
+        <div class='card pad'>
+          <h3>Capgemini Engineering — transmission CAE</h3>
+          <ul class='list'><li>Worked on multiple optimization iterations for internal clutch components of an automatic transmission</li><li>Supported the design team with geometry and material update recommendations based on simulation results</li><li>Used the spring washer update as one optimization example within a broader transmission design-improvement workflow</li><li>Prepared Abaqus models for static structural and vibration analysis, including geometry updates and targeted mesh refinement</li></ul>
+        </div>
+        <div class='card pad'>
+          <h3>Renault Group Engineering — crash simulation workflow</h3>
+          <ul class='list'><li>Prepared full-vehicle crash simulation models in ANSA, including mesh refinement in line with load-case requirements</li><li>Applied boundary conditions and configured output requests for post-processing extraction</li><li>Initiated LS-DYNA explicit solver calculations and organized simulation outputs</li><li>Post-processed deformation and energy results in META to assess structural response and support design reviews</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class='sec'><div class='wrap'><div class='sec-head'><p class='kicker'>Engineering Approach</p><h2>Simulation workflow</h2></div><div class='card pad'><ul class='list'><li>Translate physical behavior into robust finite element models</li><li>Connect simulation results to geometry, material and design decisions</li><li>Prepare solver-ready models with controlled mesh, loads, boundary conditions and output requests</li><li>Post-process deformation, energy and vibration response for technical reviews</li></ul></div></div></section>
+  <section class='sec' id='projects'><div class='wrap'><div class='sec-head'><p class='kicker'>Selected Projects</p><h2>Applied mechanics and validation projects</h2><p class='sub'>Academic and independent projects that support my professional CAE profile: contact non-linearity, durability and experimental flow diagnostics.</p></div><div class='stack'>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>Polyamide clip — non-linear contact</h3><p class='meta'>ANSYS APDL • large deformation • contact realism</p></div><div class='clip-grid'><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/rsq3aAHqWjr8aC5TgLM9G8RlMie64yP1jSORcQVw.png' alt='Clip full geometry' loading='lazy' /><figcaption>Full geometry</figcaption></figure><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/01Rqw53Jgonycbr6Jchzc1KH2OcMRBQE59e4NsaQ.png' alt='Meshing & contact with cylinder' loading='lazy' /><figcaption>Mesh & contact with cylinder</figcaption></figure></div><p class='lead mt-sm' style='font-size: 15px;'>Advanced modeling of a polyamide clip : from <strong>linear elasticity</strong> to realistic <strong>nonlinear contact</strong> simulation.</p></article>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>Skateboard axle — stress & fatigue life</h3><p class='meta'>Goodman correction • Miner rule • design under cyclic loads</p></div><figure class='wide-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/xLxhiLfXve1dlYHd4GiCNLY1BEirKIhclE2RlWqT.png' alt='Skateboard axle fatigue' loading='lazy' /><figcaption>Stress field + fatigue life estimation (Goodman / Miner).</figcaption></figure><p class='lead mt-sm' style='font-size: 15px;'>Mechanical and <strong>fatigue assessment</strong> of a skateboard axle : static stress, numerical <strong>fatigue life prediction</strong> using <strong>Goodman correction</strong>, and <strong>Miner’s damage</strong>.</p></article>
+        <article class='card pad'><div class='proj-head'><h3 style='font-size: 20px; color: #ffffff;'>PIV — turbulent water jet</h3><p class='meta'>Experimental setup • cross-correlation • Python post-processing</p></div><div class='clip-grid'><figure class='mini-media'><img src='https://cdn.youcan.shop/stores/582e4db1d8369bb8ece6b40e77cb53fb/others/KCJyXAnEDHlBXgwWnK5FmCQ3qD2KSH2KwLUw2gLQ.png' alt='PIV turbulent jet' loading='lazy' /><figcaption>Full chain: acquisition → correlation...</figcaption></figure><figure class='mini-media'><img src='assets/PIV_setup.png' alt='Experimental setup for PIV' loading='lazy' /><figcaption>PIV Experimental Setup</figcaption></figure></div><p class='lead mt-sm' style='font-size: 15px;'>Experimental setup and <strong>python</strong> based post-processing for <strong>PIV (Particle Image velocimetry)</strong> analysis of a turbulent water jet : Instrument integration, image acquisition, <strong>cross correlation</strong> analysis and validation against commercial software.</p></article>
+      </div></div></section>
+<section class='sec' id='academic-portfolio'><div class='wrap'><div class='sec-head'><p class='kicker'>Academic Foundation</p></div><details class='card academic-toggle'><summary><span class='summary-copy'><span class='summary-title'>Simulation & Instrumentation in Mechanics — UGA</span><span class='summary-sub'>Academic project archive covering numerical simulation, experimental mechanics, scientific computing and multiphysics. Kept collapsed by default so professional CAE experience stays first.</span></span><span class='summary-action' aria-hidden='true'></span></summary><div class='academic-content grid-3'>
+      <div class='card pad'><h3>Mechanical simulation: Solid mechanics</h3><ul class='list'><li>Mechanical analysis on spring washer using <strong>ANSYS APDL</strong>.</li><li>Advanced modeling of a polyamide clip : from linear elasticity to realistic <strong>nonlinear</strong> contact simulation.</li><li><strong>Hyper elastic</strong> modeling of fiber-Reinforced Biological tissue : 'parametric study of anisotropy'.</li><li>Conception numérique à partir d'un scan 3D et <strong>optimisation topologique</strong> d’un étrier de frein U-Brake pour vélo BMX en fabrication additive.</li></ul></div>
+      <div class='card pad'><h3>Thermal simulations:</h3><ul class='list'><li>Numerical thermal simulation of a high temperature pipe in <strong>ANSYS</strong> : meshing strategy, BC, convergence study, time-dependent temperature evolution.</li><li><strong>CFD</strong> investigation of heat transfer caused by natural convection in a double glazed argon filled window : ANSYS heat transfer modeling using <strong>Boussinesq</strong> approximation, Heat flux analysis, and thermal resistance assessment.</li></ul></div>
+      <div class='card pad'><h3>Fluid mechanics :</h3><ul class='list'><li>Numerical Simulation and comparative analysis of <strong>Scalar transport</strong>, <strong>Burger</strong>, <strong>Euler</strong> and <strong>Navier-Stokes</strong> equations : Shock development, thermal gradient diffusion, and compressible Poiseuille flow using <strong>Fortran</strong>-based <strong>CFD</strong> codes under Linux.</li></ul></div>
+      <div class='card pad'><h3>Mechanical instrumentation: Vibrations</h3><ul class='list'><li>Experimental vibration analysis of a Percussed gong : acoustic Data acquisition, impact-dependent energy cascade dynamics, and <strong>python</strong>-based <strong>FFT</strong> / Power Spectral Density processing.</li><li>Characterization of parametric instabilities through experimental measurements for : Pendulum <strong>oscillations</strong> ; <strong>Faraday</strong> surface modes.</li><li>Experimental determination of the dynamic properties of a cable stayed pedestrian bridge through controlled excitation using seismic sensors ; frequency-domain analysis and calculating static max load through a simplified 2D model.</li></ul></div>
+      <div class='card pad'><h3>Fluid mechanics : (Experimental)</h3><ul class='list'><li>Optical tracking of a floating sphere in a turbulent jet flow with a high speed camera using : circle detection 'hough', correlation method, and comparative signal processing in <strong>python</strong>.</li><li>Wind tunnel testing : measurements using <strong>pitot</strong>, <strong>Cobra</strong> and <strong>hot wire</strong> probes, python-Based post processing and comparative analysis of probe technologies for velocity and turbulence (<strong>Von Karman vortex</strong>, <strong>Kelvin Helmholtz</strong> instability) fields.</li><li>Experimental setup and python based post-processing for <strong>PIV</strong> (Particle Image velocimetry) analysis of a turbulent water jet : Instrument integration, image acquisition, cross correlation analysis and validation against commercial software.</li></ul></div>
+      <div class='card pad'><h3>Programming :</h3><ul class='list'><li>From scratch <strong>Python</strong> implementation of Finite element simulation (<strong>FEM</strong>) of a 2D plate’s deformation, displacement and constraints with controlled mesh, BC and material properties.</li><li>From scratch <strong>Python</strong> development of a <strong>FEM</strong> code/solver for a restrained beam : vibration and modal analysis, time dependent simulation using Newmark integration with controlled mesh, dynamic BC, damping, material properties …etc.</li></ul></div>
+      <div class='card pad'><h3>Fatigue & Durabilité</h3><ul class='list'><li>Mechanical and fatigue assessment of a skateboard axle : static stress, numerical <strong>fatigue</strong> life prediction using <strong>Goodman</strong> correction, and <strong>Miner</strong>’s damage.</li></ul></div>
+    </div></details></div></section>
+  <section class='sec' id='skills'><div class='wrap'><div class='sec-head'><p class='kicker'>CAE Skillset</p><h2>Tools and technical strengths</h2><p class='sub'>A compact view of the technical capabilities I use in professional simulation work.</p></div><div class='grid-2'><div class='card pad'><h3>Engineering workflow</h3><ul class='list'><li>From concept to validation: <strong>design → simulation → interpretation → engineering decision</strong></li><li>Strong foundation in <strong>solid and fluid mechanics</strong></li><li>Simulation combined with <strong>instrumentation and physical testing</strong></li><li>Structured problem-solving rooted in continuum mechanics</li></ul></div><div class='card pad'><h3>Core competencies</h3><div class='chips'><span><strong>FEM</strong> (2D/3D)</span><span><strong>Structural analysis</strong></span><span><strong>Vibration analysis</strong></span><span><strong>Crash simulation workflow</strong></span><span><strong>CFD</strong> (convection, transport)</span><span><strong>Non-linear contact</strong></span><span><strong>Thermal simulation</strong></span><span><strong>Fatigue</strong> (Goodman, Miner)</span><span><strong>PIV</strong> / turbulence diagnostics</span><span><strong>Scientific computing</strong></span></div><div class='mt'><h3 style='margin-top:0;'>Tools</h3><div class='chips'><span>Abaqus</span><span>LS-DYNA</span><span>ANSA</span><span>META</span><span>ANSYS Fluent</span><span>COMSOL</span><span>CATIA V5</span><span>SolidWorks</span><span>Python</span><span>MATLAB</span><span>Fortran</span></div></div></div></div></div></section>
+  <footer class='foot' id='contact'><div class='wrap foot-grid'><div><p class='kicker'>Contact</p><h2>Let’s connect</h2><p class='sub'>Interested in mechanical simulation, crash workflows, durability, vibration or experimental validation topics? Feel free to reach out.</p></div><div class='card pad'><p class='kicker'>Email</p><p class='mono'><a href='mailto:anass.ghanim01@gmail.com'>anass.ghanim01@gmail.com</a></p><p class='kicker mt-sm'>Phone</p><p class='mono'><a href='tel:+33613406301'>+33 6 13 40 63 01</a></p><p class='kicker mt-sm'>LinkedIn</p><p class='mono'><a target='_blank' rel='noopener' href='https://www.linkedin.com/in/anas-ghanim-70699a233/?profileFormEntryPoint=PROFILE_TOP_CARD_EDIT_FORM'>linkedin.com/in/anas-ghanim-70699a233</a></p></div></div></footer>
+  <script>
+    document.querySelectorAll(`a[href^='#']`).forEach(a => { a.addEventListener('click', (e) => { e.preventDefault(); const id = a.getAttribute('href'); const el = document.querySelector(id); if (!el) return; const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); }); });
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } }); }, observerOptions);
+    document.querySelectorAll('.sec-head, .card, .hero-grid > div, .foot-card').forEach(el => { el.classList.add('reveal'); observer.observe(el); });
+    window.addEventListener('scroll', () => { const header = document.querySelector('.topnav'); if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
+  </script>
+</body>
+</html>
+
+
+
+
